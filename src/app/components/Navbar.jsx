@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../Asset/Logomysteak.jpg';
+import Logo from '../Asset/Assetnavbar/Logomysteak.jpg';
 
 const Navbar = () => {
   return (
