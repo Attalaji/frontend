@@ -4,7 +4,7 @@ function page() {
  return (
 <>
 
-<section className="pt-5 pb-93">
+<section className="">
   <Home/>
 </section>
 
@@ -12,8 +12,5 @@ function page() {
 
 )
 }
-
-
-
 
 export default page

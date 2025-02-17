@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { Play, Section } from 'lucide-react';
 import { Check } from "lucide-react";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Instagram, MessageCircle, Youtube } from 'lucide-react';
 
 import Event from '../Asset/Assethome/Event.png';
 import Bg_Tentangkami from '../Asset/Assethome/Tentangkami.jpg';
@@ -111,7 +112,7 @@ export default function Home() {
 
   {/* Menu Section */}
 
-  <div className="relative min-h-screen bg-black py-16">
+  <div className="container mx-auto max-w-screen-lg px-4">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">MENU</h2>
           
@@ -512,14 +513,14 @@ export default function Home() {
 
                                                                 {/* Gallery Section */}
 
-        <div className="relative bg-black py-20">
+        <div className="relative bg-black py-0">
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src={glr1}
             alt="Background"
             fill
-            className="object-cover brightness-[0.2]"
+            className="object-cover brightness-[0.9]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
@@ -539,6 +540,7 @@ export default function Home() {
               
               {/* Images Grid */}
               <div className="flex-1 grid grid-cols-3 gap-4 px-2">
+                
                 {/* Gallery Image 1 */}
                 <div className="aspect-[4/3] rounded overflow-hidden">
                 <Image
@@ -582,7 +584,282 @@ export default function Home() {
         </div>
       </div>
 
+                                                {/* Reservation Section */}
+      <div className="relative bg-black py-00">
+        {/* Background with overlay */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src={Background}
+            alt="Background"
+            fill
+            className="object-cover brightness-[0.9]"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
+        </div>
 
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">RESERVASI</h2>
+          
+
+          {/* Form Container */}
+          <div className="max-w-3xl mx-auto">
+            <form className="space-y-6">
+              {/* Grid for 2-column inputs */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Nama */}
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Nama"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Jumlah orang */}
+                <div>
+                  <input 
+                    type="number" 
+                    placeholder="Jumlah orang"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Email"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Nomor */}
+                <div>
+                  <input 
+                    type="tel" 
+                    placeholder="Nomor"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Tanggal */}
+                <div>
+                  <input 
+                    type="date" 
+                    placeholder="Tanggal"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
+                  />
+                </div>
+
+                {/* Waktu */}
+                <div>
+                  <input 
+                    type="time" 
+                    placeholder="Waktu"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
+                  />
+                </div>
+              </div>
+
+              {/* Pesan */}
+              <div>
+                <textarea 
+                  placeholder="Pesan"
+                  rows={4}
+                  className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 resize-none"
+                ></textarea>
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex justify-center">
+                <button 
+                  type="submit"
+                  className="bg-[#836A41] text-white px-8 py-2 rounded hover:bg-[#C59E5F] transition-colors"
+                >
+                  Kirim
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+{/* Contact Section */}
+<div className="relative bg-black py-20">
+        {/* Background with overlay */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src={Background}
+            alt="Background"
+            fill
+            className="object-cover brightness-[0.2]"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">KONTAK</h2>
+          
+          {/* Contact Container */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Map Container */}
+              <div className="w-full aspect-square rounded overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.902323504515!2d119.41246617143035!3d-5.147665903893327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbefd269d80b2f9%3A0x3030bfbcaf770b0!2sMakassar%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1708157645640!5m2!1sen!2sid"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale"
+                ></iframe>
+              </div>
+
+              {/* Contact Form */}
+              <div className="space-y-4">
+                {/* Nama */}
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Nama"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Email"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Nomor */}
+                <div>
+                  <input 
+                    type="tel" 
+                    placeholder="Nomor"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Subjek */}
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Subjek"
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
+                  />
+                </div>
+
+                {/* Pesan */}
+                <div>
+                  <textarea 
+                    placeholder="Pesan"
+                    rows={5}
+                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 text-white placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 resize-none"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <div>
+                  <button 
+                    type="submit"
+                    className="bg-[#836A41] text-white px-8 py-2 rounded hover:bg-[#C59E5F] transition-colors"
+                  >
+                   Kirim
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+   {/* Footer Section */}
+   <footer className="bg-black py-12">
+        <div className="container mx-auto px-4">
+          {/* Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* My Steak Info */}
+            <div>
+              <h3 className="text-[#C59E5F] text-xl font-medium mb-4">My Steak</h3>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>Hertasning Baru Aroepala No. 99</p>
+                <p>+62 812 3777 5451</p>
+                <p className="mt-4">Tivoi Studio Unit 11 No. 77</p>
+                <p>+62 812 4651 171</p>
+                <p className="mt-4">mysteakindrapola@gmail.com</p>
+                <div className="flex space-x-4 mt-4">
+                  <a href="#" className="text-gray-400 hover:text-[#C59E5F]">
+                    <Instagram size={20} />
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-[#C59E5F]">
+                    <Youtube size={20} />
+                  </a>
+                  <a href="https://wa.me/6285255242210" className="text-gray-400 hover:text-[#C59E5F]">
+                    <MessageCircle size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Link */}
+            <div>
+              <h3 className="text-[#C59E5F] text-xl font-medium mb-4">Link</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="#beranda" className="hover:text-[#C59E5F]">Beranda</a></li>
+                <li><a href="#tentang-kami" className="hover:text-[#C59E5F]">Tentang kami</a></li>
+                <li><a href="#menu" className="hover:text-[#C59E5F]">Menu</a></li>
+                <li><a href="#events" className="hover:text-[#C59E5F]">Events</a></li>
+                <li><a href="#gallery" className="hover:text-[#C59E5F]">Gallery</a></li>
+                <li><a href="#reservasi" className="hover:text-[#C59E5F]">Reservasi</a></li>
+                <li><a href="#kontak" className="hover:text-[#C59E5F]">Kontak</a></li>
+              </ul>
+            </div>
+
+            {/* Jam Operasional */}
+            <div>
+              <h3 className="text-[#C59E5F] text-xl font-medium mb-4">Jam Operasional</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Senin</span>
+                  <span className="text-gray-400">10:00 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Selasa</span>
+                  <span className="text-gray-400">10:30 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Rabu</span>
+                  <span className="text-gray-400">10:00 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Kamis</span>
+                  <span className="text-gray-400">10:00 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Jumat</span>
+                  <span className="text-gray-400">10:30 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Sabtu</span>
+                  <span className="text-gray-400">10:00 - 21:30 WITA</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Minggu</span>
+                  <span className="text-gray-400">10:00 - 21:30 WITA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

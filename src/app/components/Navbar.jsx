@@ -4,11 +4,11 @@ import Logo from '../Asset/Assetnavbar/Logomysteak.jpg';
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-black bg-opacity-70 py-4 shadow-md z-50">
-      <nav className="container mx-auto flex items-center justify-between px-4">
+    <header className="w-full bg-black bg-opacity-70 py-4 mb shadow-md z-10 mb-10 ">
+      <nav className="container mx-auto flex items-center justify-between ">
         {/* Logo */}
         <Link href="/">
-          <div className="w-12 h-12 relative">
+          <div className="w-12 h-12 relative ">
             <Image src={Logo} alt="My Steak Logo" fill className="object-contain" />
           </div>
         </Link>
