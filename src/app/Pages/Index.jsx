@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import { Instagram, MessageCircle, Youtube } from "lucide-react";
 
 import Event from "../Asset/Assethome/Event.png";
@@ -639,29 +639,28 @@ export default function Home() {
 
       {/* Gallery Section */}
 
-      <div className="relative bg-black py-0">
+      <div className="relative bg-black h-screen">
         {/* Background with overlay */}
-        <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src={glr1}
             alt="Background"
             fill
-            className="object-cover brightness-[0.9]"
+            className="object-cover brightness-[0.2]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative ">
-          <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">GALLERY</h2>
+        <div className="container w-[90%] mx-auto relative text-white pt-24 ">
+          <h2 className="text-4xl font-bold text-[#C59E5F] mb-20">GALLERY</h2>
 
           {/* Gallery Container */}
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative">
             {/* Images Container with Navigation */}
-            <div className="flex items-center">
+            <div className="flex items-center justify-around">
               {/* Left Arrow */}
               <div className="text-[#C59E5F]">
-                <ChevronLeft size={24} />
+                <CircleArrowLeft size={32} />
               </div>
 
               {/* Images Grid */}
@@ -702,7 +701,7 @@ export default function Home() {
 
               {/* Right Arrow */}
               <div className="text-[#C59E5F]">
-                <ChevronRight size={24} />
+                <CircleArrowRight size={32} />
               </div>
             </div>
           </div>
