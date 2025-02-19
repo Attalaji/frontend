@@ -9,11 +9,13 @@ import { Instagram, MessageCircle, Youtube } from "lucide-react";
 import Event from "../Asset/Assethome/Event.png";
 import Bg_Tentangkami from "../Asset/Assethome/Tentangkami.jpg";
 import Background from "../Asset/Assethome/Background.jpg";
-import Res from "../Asset/Assethome/Fotores.png";
+import Res from "../Asset/Assethome/fotores.jpg";
 import Makanan from "../Asset/Assethome/Makanan.png";
 import glr1 from "../Asset/Assethome/Gallery1.png";
 import glr2 from "../Asset/Assethome/Gallery2.png";
 import glr3 from "../Asset/Assethome/Gallery3.png";
+
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -44,15 +46,15 @@ export default function Home() {
               Lorem, ipsum dolor.
             </p>
             <div className="flex gap-4">
-              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] ">
+              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition">
                 Menu
               </button>
-              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] ">
+              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition">
                 Reservasi
               </button>
             </div>
           </div>
-          <div className="w-20 h-20 rounded-full bg-[#F2AA36] flex items-center justify-center">
+          <div className="w-20 h-20 rounded-full bg-[#F2AA36] flex items-center justify-center cursor-pointer hover:bg-[#c0872c] transition">
             <Play className="w-10 h-10 text-black" />
           </div>
         </div>
@@ -65,58 +67,59 @@ export default function Home() {
             src={Bg_Tentangkami}
             alt="Tentang Kami Background"
             fill
-            className="object-cover brightness-50"
+            className="object-cover brightness-[0.20]"
             priority
           />
         </div>
-        <div className="container mx-auto px-4 py-16 relative">
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">
+        <div className="container w-[90%] mx-auto py-24 relative">
+          <div className="">
+            <h2 className="text-4xl font-bold text-[#C59E5F] mb-3">
               TENTANG KAMI
             </h2>
-            <p className="text-black-500 mb-6">
+            <p className="text-white mb-12 text-wrap max-w-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-              aspernatur. Dolores, a iste. Veritatis, inventore!
+              aspernatur. Dolores, a iste. Veritatis, inventore! Lorem ipsum dolor 
+              sit amet consectetur adipisicing elit. Natus nostrum dolorem 
+              quisquam sint! Corrupti, in quisquam possimus et harum magnam ad quas.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="relative w-[421px] h-[327px] rounded-lg overflow-hidden z-10">
+            <div className="flex gap-40 mb-16">
+              <div className="w-2/3 h-auto border-[#6B6B6B] border-4">
                 <Image
                   src={Res}
                   alt="Restaurant Interior"
-                  fill
-                  className="object-cover"
+                  className="object-fill"
                 />
               </div>
-              <div className="bg-[#F2AA36] p-8 rounded-lg z-10">
-                <p className="-700 mb-6">
+              <div className="bg-[#B5812F] p-8 text-[#FBDAA5]">
+                <p className="w mb-6">
                   Kami adalah restoran steak premium yang menghadirkan
                   pengalaman kuliner terbaik dengan bahan-bahan berkualitas
                   tinggi dan teknik memasak yang sempurna.
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Check className="text-[#836A41] w-6 h-6 mr-2" />
+                  <div className="flex items-center gap-4">
+                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
                     <span>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Totam saepe perferendis et!
                     </span>
                   </div>
-                  <div className="flex items-center">
-                    <Check className="text-[#836A41] w-6 h-6 mr-2" />
+                  <div className="flex items-center gap-4">
+                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
                     <span>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Earum a illum cum nemo duci?
                     </span>
                   </div>
-                  <div className="flex items-center">
-                    <Check className="text-[#836A41] w-6 h-6 mr-2" />
+                  <div className="flex items-center gap-4">
+                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
                     <span>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Repellat, veniam aperiam!
                     </span>
                   </div>
                 </div>
-                <p className="mt-6 -700">
+                <p className="mt-6">
                   Nikmati pengalaman bersantap yang tak terlupakan dengan
                   layanan terbaik kami.
                 </p>
@@ -128,27 +131,30 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">
               JUDULJUDUL
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#836A41] p-6">
-                <p className="-700">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+              <div className="bg-[#836a41ce] p-8">
+                <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Error amet iusto, incidunt praesentium atque possimus
-                  voluptate?
+                  voluptate? Lorem ipsum dolor sit, amet consectetur adipisicing 
+                  elit. Eos recusandae molestias in.
                 </p>
               </div>
 
-              <div className="bg-[#836A41] p-6">
-                <p className="-700">
+              <div className="bg-[#836a41ce] p-8">
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                  provident enim rerum, hic eos consequatur pariatur.
+                  provident enim rerum, hic eos consequatur pariatur. Lorem ipsum 
+                  dolor sit amet, consectetur adipisicing elit. In deserunt eum velit!
                 </p>
               </div>
 
-              <div className="bg-[#836A41] p-6">
-                <p className="-700">
+              <div className="bg-[#836a41ce] p-8">
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Suscipit corporis aspernatur dicta veritatis quam consequuntur
-                  non.
+                  non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Magni suscipit sequi voluptatum?
                 </p>
               </div>
             </div>
