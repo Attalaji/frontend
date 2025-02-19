@@ -39,14 +39,14 @@ export default function Home() {
         </div>
 
         {/* Main */}
-        <div className="relative flex items-center gap-96">
+        <div className="relative md:flex-row flex flex-col items-center md:justify-around justify-center md:text-start text-center w-screen md:gap-0 gap-4">
           <div>
-            <h1 className="text-7xl font-bold mb-4">MySteak</h1>
-            <p className="text-xl mb-8 max-w-xl ">
+            <h1 className="md:text-7xl text-5xl font-bold mb-4">MySteak</h1>
+            <p className="md:text-xl sm:text-lg md:mb-8 mb-4 md:max-w-xl sm:max-w-lg text-md max-w-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias.
-              Lorem, ipsum dolor.
+              Lorem, ipsum dolor. Lorem ipsum dolor sit.
             </p>
-            <div className="flex gap-4">
+            <div className="flex md:justify-normal justify-center gap-4">
               <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition">
                 Menu
               </button>
@@ -55,8 +55,8 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="w-20 h-20 rounded-full bg-[#F2AA36] flex items-center justify-center cursor-pointer hover:bg-[#c0872c] transition">
-            <Play className="w-10 h-10 text-black" />
+          <div className="md:w-20 md:h-20 w-14 h-14 rounded-full bg-[#F2AA36] flex items-center justify-center cursor-pointer hover:bg-[#c0872c] transition">
+            <Play className="md:w-10 md:h-10 w-6 h-6 text-black" />
           </div>
         </div>
       </div>
@@ -84,45 +84,42 @@ export default function Home() {
               quisquam sint! Corrupti, in quisquam possimus et harum magnam ad
               quas.
             </p>
-            <div className="flex gap-40 mb-16">
-              <div className="w-2/3 h-auto border-[#6B6B6B] border-4">
+            <div className="flex-row lg:flex justify-between xl:gap-12 lg:gap-8 mb-16">
+              <div className="xl:w-[70rem] lg:w-[70rem] md:w-[50%] md:mb-8 w-[0] h-full md:border-[#6B6B6B] md:border-4">
                 <Image
                   src={Res}
                   alt="Restaurant Interior"
-                  className="object-fill"
+                  className="object-fit"
                 />
               </div>
               <div className="bg-[#B5812F] p-8 text-[#FBDAA5]">
-                <p className="w mb-6">
+                <p className="mb-6">
                   Kami adalah restoran steak premium yang menghadirkan
                   pengalaman kuliner terbaik dengan bahan-bahan berkualitas
                   tinggi dan teknik memasak yang sempurna.
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline
-                      size={28}
-                      className="text-[#5D431A]"
+                      className="text-[#5D431A] size-7"
                     />
                     <span>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Totam saepe perferendis et!
                     </span>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline
-                      size={28}
-                      className="text-[#5D431A]"
+                      className="text-[#5D431A] size-7"
                     />
                     <span>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Earum a illum cum nemo duci?
                     </span>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline
-                      size={28}
-                      className="text-[#5D431A]"
+                      className="text-[#5D431A] size-7"
                     />
                     <span>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -178,8 +175,8 @@ export default function Home() {
 
       <div className="relative bg-black">
         <div className="container w-[90%] mx-auto py-24">
-          <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">MENU</h2>
-          <div className="flex justify-around w-[90%]">
+          <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">MENU</h2>
+          <div className="md:flex justify-between xl:justify-around xl:w-[95%] w-[98%] flex-row">
             {/* Left Column */}
             <div className="space-y-4">
               {/* Menu Item 1 */}
@@ -197,7 +194,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu1
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -222,7 +219,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu2
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -247,7 +244,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu3
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -272,7 +269,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu4
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -297,7 +294,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu5
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -322,7 +319,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu6
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -334,7 +331,7 @@ export default function Home() {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-4">
+            <div className="space-y-4 mt-4 md:mt-0">
               {/* Menu Item 7 */}
               <div className="flex items-center">
                 <div className="flex items-center gap-4">
@@ -350,7 +347,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu7
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -375,7 +372,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu8
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -400,7 +397,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu9
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -425,7 +422,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu10
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] gap-8 border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -450,7 +447,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu11
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
@@ -475,7 +472,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu12
-                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
                       <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
                     <p className="text-[#836A41] text-sm">
