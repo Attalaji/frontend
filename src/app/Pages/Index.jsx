@@ -487,7 +487,7 @@ export default function Home() {
       </div>
 
       {/* Events Section */}
-      <div className="relative bg-black py-20">
+      <div className="relative bg-black">
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
@@ -499,29 +499,27 @@ export default function Home() {
           />
         </div>
 
-        <div className="container w-[90%] mx-auto py-24 relative">
+        <div className="container w-[90%] mx-auto py-24 relative text-white">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">EVENTS</h2>
 
           {/* Event 1 */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-16">
-            <div className="md:w-[45%]">
+          <div className="flex flex-col md:flex-row justify-between md:items-center items-start gap-8 mb-16">
+            <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
                 Events1
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-sm lg:text-lg md:text-md leading-relaxed">
                 laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
                 Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
                 non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
                 Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
               </p>
             </div>
-            <div className="md:w-[45%]">
-              <div className="w-full h-64 rounded-lg overflow-hidden">
+            <div className="md:w-[45%] w-[70%]">
+              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 1"
-                  width={512}
-                  height={320}
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -529,25 +527,23 @@ export default function Home() {
           </div>
 
           {/* Event 2 */}
-          <div className="flex flex-col md:flex-row-reverse justify-between items-start gap-8 mb-16">
-            <div className="md:w-[45%]">
+          <div className="flex flex-col md:flex-row-reverse justify-between md:items-center items-start gap-8 mb-16">
+            <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
-                Events1
+                Events2
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-sm lg:text-lg md:text-md leading-relaxed">
                 laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
                 Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
                 non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
                 Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
               </p>
             </div>
-            <div className="md:w-[45%]">
-              <div className="w-full h-64 rounded-lg overflow-hidden">
+            <div className="md:w-[45%] w-[70%]">
+              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 2"
-                  width={512}
-                  height={320}
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -555,25 +551,23 @@ export default function Home() {
           </div>
 
           {/* Event 3 */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-            <div className="md:w-[45%]">
+          <div className="flex flex-col md:flex-row justify-between md:items-center items-start gap-8">
+            <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
-                Events1
+                Events3
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-sm lg:text-lg md:text-md leading-relaxed">
                 laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
                 Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
                 non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
                 Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
               </p>
             </div>
-            <div className="md:w-[45%]">
-              <div className="w-full h-64 rounded-lg overflow-hidden">
+            <div className="md:w-[45%] w-[70%]">
+              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 3"
-                  width={512}
-                  height={320}
                   className="object-cover w-full h-full"
                 />
               </div>
