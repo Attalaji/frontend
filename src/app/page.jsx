@@ -4,7 +4,7 @@ function page() {
  return (
 <>
 
-<section className="">
+<section>
   <Home/>
 </section>
 
@@ -13,4 +13,4 @@ function page() {
 )
 }
 
-export default page
+export default page

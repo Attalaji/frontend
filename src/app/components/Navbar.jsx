@@ -4,17 +4,17 @@ import Logo from '../Asset/Assetnavbar/Logomysteak.jpg';
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-black bg-opacity-70 py-4 mb shadow-md z-10 mb-10 ">
-      <nav className="container mx-auto flex items-center justify-between ">
+    <header className="w-full bg-black bg-opacity-70 py-2 shadow-md z-10 mb-10 ">
+      <nav className="container mx-auto flex items-center justify-evenly ">
         {/* Logo */}
         <Link href="/">
-          <div className="w-12 h-12 relative ">
+          <div className="w-16 h-16 relative ">
             <Image src={Logo} alt="My Steak Logo" fill className="object-contain" />
           </div>
         </Link>
 
         {/* Navigation Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-10">
           <Link href="/" className="text-white text-base hover:text-gray-300">Beranda</Link>
           <Link href="/tentang-kami" className="text-white text-base hover:text-gray-300">Tentang Kami</Link>
           <Link href="/menu" className="text-white text-base hover:text-gray-300">Menu</Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
 
         {/* Login Button */}
-        <Link href="/login" className="bg-transparent text-white border-2 border-orange-500 px-6 py-2 rounded-full hover:bg-orange-500 transition">
+        <Link href="/login" className="bg-transparent text-white border-2 border-[#F2AA36] px-8 py-1.5 rounded-full hover:bg-[#F2AA36] hover:text-black transition">
           Login
         </Link>
       </nav>
