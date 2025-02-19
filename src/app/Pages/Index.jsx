@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Instagram, MessageCircle, Youtube } from "lucide-react";
 
 import Event from "../Asset/Assethome/Event.png";
+import Events from "../Asset/Assethome/Events.jpg";
 import Bg_Tentangkami from "../Asset/Assethome/Tentangkami.jpg";
 import Background from "../Asset/Assethome/Background.jpg";
 import Res from "../Asset/Assethome/fotores.jpg";
@@ -72,15 +73,16 @@ export default function Home() {
           />
         </div>
         <div className="container w-[90%] mx-auto py-24 relative">
-          <div className="">
+          <div>
             <h2 className="text-4xl font-bold text-[#C59E5F] mb-3">
               TENTANG KAMI
             </h2>
             <p className="text-white mb-12 text-wrap max-w-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-              aspernatur. Dolores, a iste. Veritatis, inventore! Lorem ipsum dolor 
-              sit amet consectetur adipisicing elit. Natus nostrum dolorem 
-              quisquam sint! Corrupti, in quisquam possimus et harum magnam ad quas.
+              aspernatur. Dolores, a iste. Veritatis, inventore! Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Natus nostrum dolorem
+              quisquam sint! Corrupti, in quisquam possimus et harum magnam ad
+              quas.
             </p>
             <div className="flex gap-40 mb-16">
               <div className="w-2/3 h-auto border-[#6B6B6B] border-4">
@@ -98,21 +100,30 @@ export default function Home() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
+                    <IoMdCheckmarkCircleOutline
+                      size={28}
+                      className="text-[#5D431A]"
+                    />
                     <span>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Totam saepe perferendis et!
                     </span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
+                    <IoMdCheckmarkCircleOutline
+                      size={28}
+                      className="text-[#5D431A]"
+                    />
                     <span>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Earum a illum cum nemo duci?
                     </span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <IoMdCheckmarkCircleOutline size={28} className="text-[#5D431A]" />
+                    <IoMdCheckmarkCircleOutline
+                      size={28}
+                      className="text-[#5D431A]"
+                    />
                     <span>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Repellat, veniam aperiam!
@@ -136,7 +147,7 @@ export default function Home() {
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Error amet iusto, incidunt praesentium atque possimus
-                  voluptate? Lorem ipsum dolor sit, amet consectetur adipisicing 
+                  voluptate? Lorem ipsum dolor sit, amet consectetur adipisicing
                   elit. Eos recusandae molestias in.
                 </p>
               </div>
@@ -144,8 +155,9 @@ export default function Home() {
               <div className="bg-[#836a41ce] p-8">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                  provident enim rerum, hic eos consequatur pariatur. Lorem ipsum 
-                  dolor sit amet, consectetur adipisicing elit. In deserunt eum velit!
+                  provident enim rerum, hic eos consequatur pariatur. Lorem
+                  ipsum dolor sit amet, consectetur adipisicing elit. In
+                  deserunt eum velit!
                 </p>
               </div>
 
@@ -153,7 +165,7 @@ export default function Home() {
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Suscipit corporis aspernatur dicta veritatis quam consequuntur
-                  non. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  non. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Magni suscipit sequi voluptatum?
                 </p>
               </div>
@@ -164,15 +176,14 @@ export default function Home() {
 
       {/* Menu Section */}
 
-      <div className="container mx-auto max-w-screen-lg px-4">
-        <div className="container mx-auto px-4">
+      <div className="relative bg-black">
+        <div className="container w-[90%] mx-auto py-24">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">MENU</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+          <div className="flex justify-around w-[90%]">
             {/* Left Column */}
             <div className="space-y-4">
               {/* Menu Item 1 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -184,19 +195,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu1
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 2 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -208,19 +220,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu2
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 3 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -232,19 +245,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu3
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 4 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -256,19 +270,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu4
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 5 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -280,19 +295,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu5
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 6 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -304,22 +320,23 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu6
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
             </div>
 
             {/* Right Column */}
             <div className="space-y-4">
               {/* Menu Item 7 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -331,19 +348,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu7
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 8 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -355,19 +373,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu8
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 9 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -379,19 +398,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu9
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 10 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -403,19 +423,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu10
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 11 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -427,19 +448,20 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu11
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
 
               {/* Menu Item 12 */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden">
                     <Image
@@ -451,15 +473,16 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
                       Menu12
+                      <hr className="min-w-full border-[#C59E5F] rounded-sm border-[1.5px]" />
+                      <span className="text-[#C59E5F] font-medium">50k</span>
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#836A41] text-sm">
                       Lorem ipsum dolor sit amet consectetur
                     </p>
                   </div>
                 </div>
-                <span className="text-[#C59E5F] font-medium">50k</span>
               </div>
             </div>
           </div>
@@ -471,16 +494,15 @@ export default function Home() {
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src={Background}
-            alt="Background"
+            src={Events}
+            alt="Events"
             fill
             className="object-cover brightness-[0.2]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="container w-[90%] mx-auto py-24 relative">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">EVENTS</h2>
 
           {/* Event 1 */}
