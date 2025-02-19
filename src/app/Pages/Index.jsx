@@ -17,6 +17,8 @@ import glr2 from "../Asset/Assethome/Gallery2.png";
 import glr3 from "../Asset/Assethome/Gallery3.png";
 
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { RiDoubleQuotesL } from "react-icons/ri";
+import { RiDoubleQuotesR } from "react-icons/ri";
 
 export default function Home() {
   return (
@@ -100,27 +102,21 @@ export default function Home() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-6">
-                    <IoMdCheckmarkCircleOutline
-                      className="text-[#5D431A] size-7"
-                    />
+                    <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Totam saepe perferendis et!
                     </span>
                   </div>
                   <div className="flex items-center gap-6">
-                    <IoMdCheckmarkCircleOutline
-                      className="text-[#5D431A] size-7"
-                    />
+                    <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Earum a illum cum nemo duci?
                     </span>
                   </div>
                   <div className="flex items-center gap-6">
-                    <IoMdCheckmarkCircleOutline
-                      className="text-[#5D431A] size-7"
-                    />
+                    <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Repellat, veniam aperiam!
@@ -516,7 +512,7 @@ export default function Home() {
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 1"
@@ -540,7 +536,7 @@ export default function Home() {
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 2"
@@ -564,7 +560,7 @@ export default function Home() {
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full h-[25rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
                   src={Event}
                   alt="Event 3"
@@ -578,7 +574,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <div className="relative min-h-[50vh] bg-black py-12">
-        <div className="container mx-auto px-4">
+        <div className="container w-[90%] mx-auto relative text-white">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">
             TESTIMONIALS
           </h2>
@@ -586,55 +582,55 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Testimonial Card 1 */}
             <div className="bg-[#836A41] p-6 rounded-lg relative">
-              <div className="absolute top-4 left-4 text-5xl text-[#C59E5F] opacity-50">
-                "
+              <div className="absolute top-4 left-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesL />
               </div>
-              <p className=" text-sm leading-relaxed relative z-10 mb-4 px-4">
+              <p className=" text-sm leading-relaxed relative mb-4 px-4">
                 Nam Donec non, laoreet ut at, turpis fringilla efficitur,
                 adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
                 clidunt risus, urn
               </p>
-              <div className="flex items-center justify-end pr-4">
-                <p className=" text-sm">- name</p>
+              <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesR />
               </div>
-              <div className="absolute bottom-4 right-4 text-5xl text-[#C59E5F] opacity-50 rotate-180">
-                "
+              <div className="flex items-end justify-end">
+                <p className=" text-sm">- name</p>
               </div>
             </div>
 
             {/* Testimonial Card 2 */}
             <div className="bg-[#836A41] p-6 rounded-lg relative">
-              <div className="absolute top-4 left-4 text-5xl text-[#C59E5F] opacity-50">
-                "
+              <div className="absolute top-4 left-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesL />
               </div>
-              <p className=" text-sm leading-relaxed relative z-10 mb-4 px-4">
+              <p className=" text-sm leading-relaxed relative mb-4 px-4">
                 Nam Donec non, laoreet ut at, turpis fringilla efficitur,
                 adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
                 clidunt risus, urn
               </p>
-              <div className="flex items-center justify-end pr-4">
-                <p className=" text-sm">- name</p>
+              <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesR />
               </div>
-              <div className="absolute bottom-4 right-4 text-5xl text-[#C59E5F] opacity-50 rotate-180">
-                "
+              <div className="flex items-end justify-end">
+                <p className=" text-sm">- name</p>
               </div>
             </div>
 
             {/* Testimonial Card 3 */}
             <div className="bg-[#836A41] p-6 rounded-lg relative">
-              <div className="absolute top-4 left-4 text-5xl text-[#C59E5F] opacity-50">
-                "
+              <div className="absolute top-4 left-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesL />
               </div>
-              <p className=" text-sm leading-relaxed relative z-10 mb-4 px-4">
+              <p className=" text-sm leading-relaxed relative mb-4 px-4">
                 Nam Donec non, laoreet ut at, turpis fringilla efficitur,
                 adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
                 clidunt risus, urn
               </p>
-              <div className="flex items-center justify-end pr-4">
-                <p className=" text-sm">- name</p>
+              <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
+                <RiDoubleQuotesR />
               </div>
-              <div className="absolute bottom-4 right-4 text-5xl text-[#C59E5F] opacity-50 rotate-180">
-                "
+              <div className="flex items-end justify-end">
+                <p className=" text-sm">- name</p>
               </div>
             </div>
           </div>
@@ -656,7 +652,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative ">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">GALLERY</h2>
 
           {/* Gallery Container */}
@@ -727,7 +723,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative ">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">RESERVASI</h2>
 
           {/* Form Container */}
@@ -827,7 +823,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative ">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">KONTAK</h2>
 
           {/* Contact Container */}
