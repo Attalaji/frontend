@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import Navbar from "../components/Navbar";
+import GallerySlider from "../components/GallerySlider";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
@@ -638,7 +640,6 @@ export default function Home() {
       </div>
 
       {/* Gallery Section */}
-
       <div className="relative bg-black h-screen">
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full">
@@ -656,57 +657,11 @@ export default function Home() {
 
           {/* Gallery Container */}
           <div className="relative">
-            {/* Images Container with Navigation */}
-            <div className="flex items-center justify-around">
-              {/* Left Arrow */}
-              <div className="text-[#C59E5F]">
-                <CircleArrowLeft size={32} />
-              </div>
-
-              {/* Images Grid */}
-              <div className="flex-1 grid grid-cols-3 gap-4 px-2">
-                {/* Gallery Image 1 */}
-                <div className="aspect-[4/3] rounded overflow-hidden">
-                  <Image
-                    src={glr1}
-                    alt="Gallery 1"
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-
-                {/* Gallery Image 2 */}
-                <div className="aspect-[4/3] rounded overflow-hidden">
-                  <Image
-                    src={glr2}
-                    alt="Gallery 2"
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-
-                {/* Gallery Image 3 */}
-                <div className="aspect-[4/3] rounded overflow-hidden">
-                  <Image
-                    src={glr3}
-                    alt="Gallery 3"
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-
-              {/* Right Arrow */}
-              <div className="text-[#C59E5F]">
-                <CircleArrowRight size={32} />
-              </div>
-            </div>
+            <GallerySlider />
           </div>
         </div>
       </div>
+
 
       {/* Reservation Section */}
       <div className="relative bg-black py-00">
