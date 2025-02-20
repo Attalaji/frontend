@@ -7,7 +7,6 @@ import ContactForm from "../components/ContactForm";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
-import { Instagram, MessageCircle, Youtube } from "lucide-react";
 
 import Event from "../Asset/Assethome/Event.png";
 import Events from "../Asset/Assethome/Events.jpg";
@@ -16,12 +15,10 @@ import Background from "../Asset/Assethome/Background.jpg";
 import Res from "../Asset/Assethome/fotores.jpg";
 import Makanan from "../Asset/Assethome/Makanan.png";
 import glr1 from "../Asset/Assethome/Gallery1.png";
-import glr2 from "../Asset/Assethome/Gallery2.png";
-import glr3 from "../Asset/Assethome/Gallery3.png";
 
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { RiDoubleQuotesL } from "react-icons/ri";
-import { RiDoubleQuotesR } from "react-icons/ri";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -31,7 +28,7 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <div className="min-h-screen flex items-center justify-center text-white">
+      <div id="beranda" className="min-h-screen flex items-center justify-center text-white">
         {/* Background */}
         <div className="absolute inset-0 w-full h-screen z-0">
           <Image
@@ -721,6 +718,8 @@ export default function Home() {
         </div>
       </div>
 
+      <hr className="border-[#C59E5F]" />
+
       {/* Footer Section */}
       <footer className="bg-black py-12">
         <div className="container mx-auto px-4">
@@ -731,24 +730,24 @@ export default function Home() {
               <h3 className="text-[#C59E5F] text-xl font-medium mb-4">
                 My Steak
               </h3>
-              <div className="space-y-2 text-gray-400 text-sm">
-                <p>Hertasning Baru Aroepala No. 99</p>
-                <p>+62 812 3777 5451</p>
-                <p className="mt-4">Tivoi Studio Unit 11 No. 77</p>
-                <p>+62 812 4651 171</p>
-                <p className="mt-4">mysteakindrapola@gmail.com</p>
+              <div className="text-gray-400 text-sm">
+                <p>Hertasning Baru Aroepala No. 36</p>
+                <p>+62 821 3777 5451</p>
+                <p className="mt-4">Trans Studio Mall F1 No. 77</p>
+                <p>+62 821 8821 1171</p>
+                <p className="mt-4">mysteakindonesia01@gmail.com</p>
                 <div className="flex space-x-4 mt-4">
-                  <a href="#" className="text-gray-400 hover:text-[#C59E5F]">
-                    <Instagram size={20} />
+                  <a href="https://wa.me/6285396018654" className="text-gray-400 hover:text-[#C59E5F]">
+                    <FaWhatsapp size={20} />
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-[#C59E5F]">
-                    <Youtube size={20} />
+                  <a href="https://www.instagram.com/mysteakindonesia_official" className="text-gray-400 hover:text-[#C59E5F]">
+                    <FaInstagram size={20} />
                   </a>
                   <a
-                    href="https://wa.me/6285255242210"
+                    href="https://www.tiktok.com/@mysteakindonesia_officia"
                     className="text-gray-400 hover:text-[#C59E5F]"
                   >
-                    <MessageCircle size={20} />
+                    <FaTiktok size={20} />
                   </a>
                 </div>
               </div>
