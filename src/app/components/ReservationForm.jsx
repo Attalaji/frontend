@@ -41,7 +41,6 @@ export default function ReservationForm() {
     e.preventDefault();
     if (validateForm()) {
       alert("Form berhasil dikirim!");
-      // Lakukan pengiriman data ke backend di sini
     }
   };
 
