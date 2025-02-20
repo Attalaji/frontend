@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import GallerySlider from "../components/GallerySlider";
 import ReservationForm from "../components/ReservationForm";
+import ContactForm from "../components/ContactForm";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
@@ -65,7 +66,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative min-h-screen">
+      <div id="tentang-kami" className="relative min-h-screen">
         {/* Tentang Kami */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
@@ -171,7 +172,7 @@ export default function Home() {
 
       {/* Menu Section */}
 
-      <div className="relative bg-black">
+      <div id="menu" className="relative bg-black">
         <div className="container w-[90%] mx-auto py-24">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">MENU</h2>
           <div className="md:flex justify-between xl:justify-around xl:w-[95%] w-[98%] flex-row">
@@ -485,7 +486,7 @@ export default function Home() {
       </div>
 
       {/* Events Section */}
-      <div className="relative bg-black">
+      <div id="events" className="relative bg-black">
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
@@ -640,7 +641,7 @@ export default function Home() {
       </div>
 
       {/* Gallery Section */}
-      <div className="relative bg-black h-screen">
+      <div id="gallery" className="relative bg-black h-screen">
         {/* Background with overlay */}
         <div className="absolute inset-0 w-full h-full">
           <Image
@@ -662,12 +663,12 @@ export default function Home() {
         </div>
       </div>
 
-
       {/* Reservation Section */}
-      <div className="relative bg-black min-h-screen">
-
+      <div id="reservasi" className="relative bg-black min-h-screen">
         <div className="container w-[90%] mx-auto relative text-white pt-24">
-          <h2 className="text-4xl font-bold text-[#C59E5F] lg:mb-14 mb-8">RESERVASI</h2>
+          <h2 className="text-4xl font-bold text-[#C59E5F] lg:mb-14 mb-8">
+            RESERVASI
+          </h2>
 
           {/* Form Container */}
           <div className="max-w-7xl mx-auto">
@@ -690,7 +691,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative ">
+        <div
+          id="kontak"
+          className="container w-[90%] mx-auto relative text-white pt-24"
+        >
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">KONTAK</h2>
 
           {/* Contact Container */}
@@ -699,73 +703,18 @@ export default function Home() {
               {/* Map Container */}
               <div className="w-full aspect-square rounded overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.902323504515!2d119.41246617143035!3d-5.147665903893327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbefd269d80b2f9%3A0x3030bfbcaf770b0!2sMakassar%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1708157645640!5m2!1sen!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5402435342166!2d119.45437137762401!3d-5.177384081392387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3c2943a2f81%3A0x7f63e3f58c0b4f31!2sMy%20Steak!5e0!3m2!1sen!2sid!4v1740032527330!5m2!1sen!2sid"
                   width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
+                  height="90%"
+                  allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale"
                 ></iframe>
               </div>
 
               {/* Contact Form */}
               <div className="space-y-4">
-                {/* Nama */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Nama"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Nomor */}
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Nomor"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Subjek */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Subjek"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Pesan */}
-                <div>
-                  <textarea
-                    placeholder="Pesan"
-                    rows={5}
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 resize-none"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <div>
-                  <button
-                    type="submit"
-                    className="bg-[#836A41]  px-8 py-2 rounded hover:bg-[#C59E5F] transition-colors"
-                  >
-                    Kirim
-                  </button>
-                </div>
+                <ContactForm />
               </div>
             </div>
           </div>
