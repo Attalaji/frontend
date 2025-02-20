@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import GallerySlider from "../components/GallerySlider";
+import ReservationForm from "../components/ReservationForm";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
-import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import { Instagram, MessageCircle, Youtube } from "lucide-react";
 
 import Event from "../Asset/Assethome/Event.png";
@@ -664,101 +664,14 @@ export default function Home() {
 
 
       {/* Reservation Section */}
-      <div className="relative bg-black py-00">
-        {/* Background with overlay */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image
-            src={Background}
-            alt="Background"
-            fill
-            className="object-cover brightness-[0.9]"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
-        </div>
+      <div className="relative bg-black min-h-screen">
 
-        <div className="container mx-auto px-4 relative ">
-          <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">RESERVASI</h2>
+        <div className="container w-[90%] mx-auto relative text-white pt-24">
+          <h2 className="text-4xl font-bold text-[#C59E5F] lg:mb-14 mb-8">RESERVASI</h2>
 
           {/* Form Container */}
-          <div className="max-w-3xl mx-auto">
-            <form className="space-y-6">
-              {/* Grid for 2-column inputs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Nama */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Nama"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Jumlah orang */}
-                <div>
-                  <input
-                    type="number"
-                    placeholder="Jumlah orang"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Nomor */}
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Nomor"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
-                  />
-                </div>
-
-                {/* Tanggal */}
-                <div>
-                  <input
-                    type="date"
-                    placeholder="Tanggal"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
-                  />
-                </div>
-
-                {/* Waktu */}
-                <div>
-                  <input
-                    type="time"
-                    placeholder="Waktu"
-                    className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
-                  />
-                </div>
-              </div>
-
-              {/* Pesan */}
-              <div>
-                <textarea
-                  placeholder="Pesan"
-                  rows={4}
-                  className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2  placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 resize-none"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-[#836A41]  px-8 py-2 rounded hover:bg-[#C59E5F] transition-colors"
-                >
-                  Kirim
-                </button>
-              </div>
-            </form>
+          <div className="max-w-7xl mx-auto">
+            <ReservationForm />
           </div>
         </div>
       </div>
