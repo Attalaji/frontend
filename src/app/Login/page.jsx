@@ -1,32 +1,56 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaLock } from "react-icons/fa";
 import Background from "../Asset/Assethome/Background.jpg";
 
-
-const RegisterPage = () => {
+const page = () => {
   const router = useRouter();
 
-  // State untuk input data
-  const [name, setName] = useState("");
+  // State untuk input dan status Remember Me
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
 
-  // Fungsi register
-  const handleRegister = (e) => {
+  // Cek localStorage remember Me
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberedEmail");
+    if (savedEmail) {
+      setEmail(savedEmail);
+      setRememberMe(true);
+    }
+  }, []);
+
+  // Fungsi login
+  const handleLogin = (e) => {
     e.preventDefault();
 
     // Simulasi validasi sederhana
-    if (name && email && password.length >= 6) {
-      console.log("Registrasi sukses:", { name, email, password });
-      router.push("/login");
+    if (email === "user@example.com" && password === "password123") {
+      if (rememberMe) {
+        localStorage.setItem("rememberedEmail", email);
+      } else {
+        localStorage.removeItem("rememberedEmail");
+      }
+
+      // Redirect ke dashboard (ubah sesuai kebutuhan)
+      router.push("/dashboard");
+    }
+    if (email === "admin@example.com" && password === "adminpassword") {
+      if (rememberMe) {
+        localStorage.setItem("rememberedEmail", email);
+      } else {
+        localStorage.removeItem("rememberedEmail");
+      }
+
+      // Redirect ke dashboard (ubah sesuai kebutuhan)
+      router.push("/dashboardAdmin");
     } else {
-      setError("Harap isi semua kolom dan pastikan password minimal 6 karakter!");
+      setError("Email atau password salah!");
     }
   };
 
@@ -46,28 +70,13 @@ const RegisterPage = () => {
         className="relative bg-black bg-opacity-50 p-8 rounded-xl shadow-lg w-[400px] text-white backdrop-blur-md"
       >
         <h2 className="text-2xl font-semibold text-center mb-6 border-b border-gray-500 pb-2">
-          My Steak - Daftar
+          My Steak - Login
         </h2>
 
         {/* Error Message */}
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-        <form onSubmit={handleRegister}>
-          {/* Name Input */}
-          <div className="mb-4">
-            <label className="flex items-center gap-2 bg-transparent border border-gray-400 p-3 rounded-full">
-              <FaUser className="text-gray-400" />
-              <input
-                type="text"
-                placeholder="Nama"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="w-full bg-transparent outline-none text-white placeholder-gray-300"
-              />
-            </label>
-          </div>
-
+        <form onSubmit={handleLogin}>
           {/* Email Input */}
           <div className="mb-4">
             <label className="flex items-center gap-2 bg-transparent border border-gray-400 p-3 rounded-full">
@@ -98,21 +107,37 @@ const RegisterPage = () => {
             </label>
           </div>
 
-          {/* Register Button */}
+          {/* Remember Me & Forgot Password */}
+          <div className="flex items-center justify-between text-sm mb-4">
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+                className="w-4 h-4"
+              />
+              Remember Me
+            </label>
+            <a href="#" className="text-white-400 hover:text-[#C59E5F]">
+              Lupa Sandi
+            </a>
+          </div>
+
+          {/* Login Button */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             type="submit"
-            className="w-full bg-[#836A41] hover:bg-[#C59E5F] text-black font-bold py-2 rounded-full"
+            className="w-full bg-[#836A41] hover:bg-[#C59E5F] text-black font-bold py-2 rounded-full tracking-wider"
           >
-            DAFTAR
+            LOGIN
           </motion.button>
         </form>
 
-        {/* Login Link */}
+        {/* Register */}
         <p className="text-center text-sm mt-4">
-          Sudah punya akun?{" "}
-          <Link href="/login" className="text-white-700 hover:text-[#C59E5F]">
-            Login
+          Belum punya akun?{" "}
+          <Link href="/Daftar" className="text-[#836A41] hover:text-[#C59E5F]">
+            Daftar
           </Link>
         </p>
       </motion.div>
@@ -120,4 +145,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default page;

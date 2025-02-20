@@ -69,7 +69,7 @@ export default function Home() {
             </div>
           </div>
           <div className="md:w-20 md:h-20 w-14 h-14 rounded-full bg-[#F2AA36] flex items-center justify-center cursor-pointer hover:bg-[#c0872c] transition">
-           <VideoModal />
+            <VideoModal />
           </div>
         </div>
       </div>

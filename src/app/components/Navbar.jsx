@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../Asset/Assetnavbar/Logomysteak.jpg';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const router = useRouter()
+
   return (
     <header className="w-full bg-black bg-opacity-70 py-2 shadow-md z-10 mb-10 ">
       <nav className="container mx-auto flex items-center justify-evenly ">
@@ -23,9 +26,9 @@ const Navbar = () => {
         </div>
 
         {/* Login Button */}
-        <Link href="/login" className="bg-transparent text-white border-2 border-[#F2AA36] px-8 py-1.5 rounded-full hover:bg-[#F2AA36] hover:text-black transition">
+        <button onClick={() => router.push('/Login')} className="bg-transparent text-white border-2 border-[#F2AA36] px-8 py-1.5 rounded-full hover:bg-[#F2AA36] hover:text-black transition">
           Login
-        </Link>
+        </button>
       </nav>
     </header>
   );
