@@ -7,11 +7,9 @@ const Navbar = () => {
     <header className="w-full bg-black bg-opacity-70 py-2 shadow-md z-10 mb-10 ">
       <nav className="container mx-auto flex items-center justify-evenly ">
         {/* Logo */}
-        <Link href="/">
-          <div className="w-16 h-16 relative ">
-            <Image src={Logo} alt="My Steak Logo" fill className="object-contain" />
-          </div>
-        </Link>
+        <div className="w-16 h-16 relative ">
+          <Image src={Logo} alt="My Steak Logo" fill className="object-contain" />
+        </div>
 
         {/* Navigation Links */}
         <div className="flex space-x-10">

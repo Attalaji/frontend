@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 import GallerySlider from "../components/GallerySlider";
 import ReservationForm from "../components/ReservationForm";
 import ContactForm from "../components/ContactForm";
+import VideoModal from "../components/VideoModal";
 
 import { Play, Section } from "lucide-react";
 import { Check } from "lucide-react";
@@ -28,7 +30,10 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <div id="beranda" className="min-h-screen flex items-center justify-center text-white">
+      <div
+        id="beranda"
+        className="min-h-screen flex items-center justify-center text-white"
+      >
         {/* Background */}
         <div className="absolute inset-0 w-full h-screen z-0">
           <Image
@@ -49,16 +54,22 @@ export default function Home() {
               Lorem, ipsum dolor. Lorem ipsum dolor sit.
             </p>
             <div className="flex md:justify-normal justify-center gap-4">
-              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition">
+              <Link
+                href="/#menu"
+                className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition"
+              >
                 Menu
-              </button>
-              <button className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition">
+              </Link>
+              <Link
+                href="/#reservasi"
+                className="px-8 py-1.5 rounded-full border-2 border-[#F2AA36] hover:bg-[#F2AA36] hover:text-black transition"
+              >
                 Reservasi
-              </button>
+              </Link>
             </div>
           </div>
           <div className="md:w-20 md:h-20 w-14 h-14 rounded-full bg-[#F2AA36] flex items-center justify-center cursor-pointer hover:bg-[#c0872c] transition">
-            <Play className="md:w-10 md:h-10 w-6 h-6 text-black" />
+           <VideoModal />
           </div>
         </div>
       </div>
@@ -737,10 +748,16 @@ export default function Home() {
                 <p>+62 821 8821 1171</p>
                 <p className="mt-4">mysteakindonesia01@gmail.com</p>
                 <div className="flex space-x-4 mt-4">
-                  <a href="https://wa.me/6285396018654" className="text-gray-400 hover:text-[#C59E5F]">
+                  <a
+                    href="https://wa.me/6285396018654"
+                    className="text-gray-400 hover:text-[#C59E5F]"
+                  >
                     <FaWhatsapp size={20} />
                   </a>
-                  <a href="https://www.instagram.com/mysteakindonesia_official" className="text-gray-400 hover:text-[#C59E5F]">
+                  <a
+                    href="https://www.instagram.com/mysteakindonesia_official"
+                    className="text-gray-400 hover:text-[#C59E5F]"
+                  >
                     <FaInstagram size={20} />
                   </a>
                   <a
