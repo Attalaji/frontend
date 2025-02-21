@@ -132,7 +132,7 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
             </li>
             <li>
               <a
-                href="#"
+                href="/Login"
                 className="flex items-center p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
               >
                 <FiLogOut

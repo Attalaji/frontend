@@ -143,12 +143,7 @@ export default function ReservationForm() {
       <div className="flex justify-center">
         <button
           type="submit"
-          className={`px-8 py-2 rounded transition-colors ${
-            Object.keys(errors).length === 0
-              ? "bg-[#836A41] hover:bg-[#C59E5F]"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={Object.keys(errors).length > 0}
+          className="px-8 py-2 rounded transition-colors bg-[#836A41] hover:bg-[#C59E5F]"
         >
           Kirim
         </button>

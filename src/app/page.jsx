@@ -4,14 +4,14 @@ import Buy from "./UserDashboard/Reservasi/page";
 function page() {
  return (
 <>
-{/* 
-<section>
-  <Home/>
-</section> */}
 
 <section>
-  <Buy/>
+  <Home/>
 </section>
+
+{/* <section>
+  <Buy/>
+</section> */}
 </>
 
 )

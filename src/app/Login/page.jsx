@@ -38,7 +38,7 @@ const page = () => {
       }
 
       // Redirect ke dashboard (ubah sesuai kebutuhan)
-      router.push("/UserDashboard");
+      router.push("/UserDashboard/Menu");
     } else {
       setError("Email atau password salah!");
     }

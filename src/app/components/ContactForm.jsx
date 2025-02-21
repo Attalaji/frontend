@@ -20,7 +20,8 @@ export default function ContactForm() {
     } else if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.email)) {
       newErrors.email = "Gunakan email @gmail.com";
     }
-    if (!formData.nomor.trim() || !/^\d+$/.test(formData.nomor)) newErrors.nomor = "Masukkan nomor yang valid (hanya angka)";
+    if (!formData.nomor.trim() || !/^\d+$/.test(formData.nomor))
+      newErrors.nomor = "Masukkan nomor yang valid (hanya angka)";
     if (!formData.subjek.trim()) newErrors.subjek = "Subjek wajib diisi";
 
     setErrors(newErrors);
@@ -90,7 +91,9 @@ export default function ContactForm() {
           onChange={handleChange}
           className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
         />
-        {errors.subjek && <p className="text-red-500 text-sm">{errors.subjek}</p>}
+        {errors.subjek && (
+          <p className="text-red-500 text-sm">{errors.subjek}</p>
+        )}
       </div>
 
       {/* Pesan */}
@@ -109,12 +112,7 @@ export default function ContactForm() {
       <div>
         <button
           type="submit"
-          className={`px-8 py-2 rounded transition-colors ${
-            Object.keys(errors).length === 0
-              ? "bg-[#836A41] hover:bg-[#C59E5F]"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={Object.keys(errors).length > 0}
+          className="px-8 py-2 rounded transition-colors bg-[#836A41] hover:bg-[#C59E5F]"
         >
           Kirim
         </button>

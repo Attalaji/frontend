@@ -6,4 +6,14 @@
   color: black;
 }
 
+.scrollbar-hidden {
+  overflow-x: auto;
+  -ms-overflow-style: none; /* Menyembunyikan scrollbar di IE/Edge */
+  scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Menyembunyikan scrollbar di Webkit (Chrome, Safari) */
+}
+
 

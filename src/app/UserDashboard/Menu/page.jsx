@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdShoppingCart } from "react-icons/md";
@@ -7,21 +7,13 @@ import menuItems from "../../data/menuItems";
 import { useRouter } from "next/navigation";
 
 function page() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [orders, setOrders] = useState([]);
   const router = useRouter();
 
-  // 🔹 Load pesanan dari localStorage saat halaman dimuat
-  useEffect(() => {
-    const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
-    setOrders(storedOrders);
-    console.log("Orders Data:", storedOrders);
-  }, []); // Gunakan [] agar hanya dijalankan saat komponen pertama kali dimuat
-
-  // 🔹 Hitung subtotal sebelum digunakan
+  // 🔹 Hitung subtotal
   const subtotal = orders.reduce(
-    (acc, order) => acc + (order.price || 0) * (order.quantity || 0),
+    (acc, order) => acc + order.price * order.quantity,
     0
   );
   const tax = subtotal * 0.11;
@@ -44,7 +36,6 @@ function page() {
     }
 
     setOrders(updatedOrders);
-    localStorage.setItem("orders", JSON.stringify(updatedOrders));
   };
 
   // 🔹 Hapus dari pesanan
@@ -64,37 +55,17 @@ function page() {
     }
 
     setOrders(updatedOrders);
-    localStorage.setItem("orders", JSON.stringify(updatedOrders));
   };
 
-  // 🔹 Fungsi "PESAN" untuk menyimpan ke localStorage
+  // 🔹 Simpan Pesanan (Hanya Navigasi ke Riwayat Pesanan)
   const handlePlaceOrder = () => {
     if (orders.length === 0) {
       alert("Tidak ada pesanan untuk diproses.");
       return;
     }
-  
-    const previousOrders = JSON.parse(localStorage.getItem("orderHistory")) || [];
-  
-    const newOrder = {
-      id: Date.now(), // ✅ ID Unik agar tidak terjadi duplicate keys
-      date: new Date().toLocaleDateString("id-ID"),
-      items: orders.map((order) => `${order.name} (${order.quantity})`).join(", "),
-      subtotal: orders.reduce((acc, order) => acc + order.price * order.quantity, 0),
-      tax: subtotal * 0.11,
-      service: 15000,
-      total: subtotal + (subtotal * 0.11) + 15000,
-      status: "Menunggu",
-    };
-  
-    const updatedOrders = [newOrder, ...previousOrders]; // ✅ Pesanan terbaru di atas
-  
-    localStorage.setItem("orderHistory", JSON.stringify(updatedOrders));
-    localStorage.removeItem("orders");
-    setOrders([]); // ✅ Kosongkan pesanan setelah dipesan
-  
+
     router.push("/UserDashboard/RiwayatPesanan");
-  };   
+  };
 
   // 🔹 Filter menu berdasarkan kategori
   const filteredMenu =
@@ -149,7 +120,7 @@ function page() {
                     <div>
                       <p className="font-medium">{order.name}</p>
                       <p className="text-sm text-gray-500">
-                        Rp{(order.price || 0).toLocaleString()}
+                        Rp{order.price.toLocaleString()}
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
