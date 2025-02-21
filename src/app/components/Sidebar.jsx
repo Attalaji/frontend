@@ -59,7 +59,7 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
                   setSelectedCategory("All");  // Tampilkan semua menu
                   setMenuOpen(!menuOpen);       // Toggle dropdown
                 }}
-                className="flex items-center w-full p-2 rounded-lg text-white hover:bg-[#C59E5F]"
+                className="flex items-center w-full p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
               >
                 <IoMenu size={20} className="text-gray-400 group-hover:text-white" />
                 <span className="ms-3">Menu</span>
