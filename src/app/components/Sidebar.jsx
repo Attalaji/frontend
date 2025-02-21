@@ -7,13 +7,21 @@ import { RiFileHistoryLine } from "react-icons/ri";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { useRouter } from "next/navigation";
 
 function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
   const [menuOpen, setMenuOpen] = useState(false); // Untuk dropdown menu
+  const router = useRouter();
 
+  // Fungsi untuk mengubah kategori & navigasi ke halaman menu
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category); // Ubah kategori yang dipilih
-    setDrawerOpen(false); // Tutup drawer jika di layar kecil
+    if (setSelectedCategory) { // Pastikan `setSelectedCategory` ada
+      setSelectedCategory(category);
+    }
+    if (typeof setDrawerOpen === "function") {
+      setDrawerOpen(false); // Tutup drawer jika di layar kecil
+    }
+    router.push("/UserDashboard/Menu"); // Navigasi ke halaman menu
   };
 
   return (
@@ -56,8 +64,8 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
             <li>
               <button
                 onClick={() => {
-                  setSelectedCategory("All");  // Tampilkan semua menu
-                  setMenuOpen(!menuOpen);       // Toggle dropdown
+                  handleCategoryClick("All");
+                  setMenuOpen(!menuOpen); // Toggle dropdown
                 }}
                 className="flex items-center w-full p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
               >
@@ -84,7 +92,7 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
                   ].map((category) => (
                     <li key={category}>
                       <button
-                        onClick={() => setSelectedCategory(category)}
+                        onClick={() => handleCategoryClick(category)}
                         className="block w-full text-left p-2 text-white hover:bg-[#C59E5F] rounded"
                       >
                         {category}
@@ -98,7 +106,7 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
             {/* Menu Tambahan */}
             <li>
               <a
-                href="#"
+                href="/UserDashboard/RiwayatPesanan"
                 className="flex items-center p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
               >
                 <RiFileHistoryLine
