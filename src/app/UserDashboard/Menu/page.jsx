@@ -73,40 +73,28 @@ function page() {
       alert("Tidak ada pesanan untuk diproses.");
       return;
     }
-
-    // Ambil pesanan sebelumnya
-    const previousOrders =
-      JSON.parse(localStorage.getItem("orderHistory")) || [];
-
-    // Format pesanan baru
+  
+    const previousOrders = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  
     const newOrder = {
-      id: previousOrders.length + 1,
+      id: Date.now(), // ✅ ID Unik agar tidak terjadi duplicate keys
       date: new Date().toLocaleDateString("id-ID"),
-      items: orders
-        .map((order) => `${order.name} (${order.quantity})`)
-        .join(", "),
-      subtotal,
-      tax,
-      service,
-      total,
+      items: orders.map((order) => `${order.name} (${order.quantity})`).join(", "),
+      subtotal: orders.reduce((acc, order) => acc + order.price * order.quantity, 0),
+      tax: subtotal * 0.11,
+      service: 15000,
+      total: subtotal + (subtotal * 0.11) + 15000,
       status: "Menunggu",
     };
-
-    // Simpan dengan **pesanan baru di atas**
-    const updatedOrders = [newOrder, ...previousOrders];
-
-    console.log("✅ Order yang Disimpan:", updatedOrders);
-
-    // Simpan ke localStorage
+  
+    const updatedOrders = [newOrder, ...previousOrders]; // ✅ Pesanan terbaru di atas
+  
     localStorage.setItem("orderHistory", JSON.stringify(updatedOrders));
-
-    // Hapus pesanan setelah diproses
     localStorage.removeItem("orders");
-    setOrders([]);
-
-    // Arahkan ke halaman Riwayat Pesanan
+    setOrders([]); // ✅ Kosongkan pesanan setelah dipesan
+  
     router.push("/UserDashboard/RiwayatPesanan");
-  };
+  };   
 
   // 🔹 Filter menu berdasarkan kategori
   const filteredMenu =
