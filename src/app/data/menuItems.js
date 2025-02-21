@@ -1,4 +1,6 @@
 const menuItems = [
+
+  
   // SOFT DRINKS
   { name: "Coca Cola", category: "Minuman", price: 17000, image: "" },
   { name: "Sweet Tea (Hot)", category: "Minuman", price: 20000, image: "" },

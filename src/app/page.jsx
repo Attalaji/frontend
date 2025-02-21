@@ -1,13 +1,17 @@
-import Home from "./pages/Index";
+import Home from "./Pages/Index"; 
 
+import Buy from "./UserDashboard/Reservasi/page";
 function page() {
  return (
 <>
-
+{/* 
 <section>
   <Home/>
-</section>
+</section> */}
 
+<section>
+  <Buy/>
+</section>
 </>
 
 )

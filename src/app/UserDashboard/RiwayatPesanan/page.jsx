@@ -43,7 +43,7 @@ function Page() {
     <div className="flex">
       <Sidebar />
       <main className="p-6 sm:ml-64 w-full min-h-screen bg-[#f1f1f1]">
-        <h2 className="text-2xl font-bold mb-6">Riwayat Pesanan</h2>
+        <h2 className="text-2xl font-bold mb-6 text-black">Riwayat Pesanan</h2>
         <div className="bg-white rounded-lg shadow p-6 overflow-x-auto">
           {orderHistory.length === 0 ? (
             <p className="text-center text-gray-500">Tidak ada riwayat pesanan.</p>
@@ -51,15 +51,15 @@ function Page() {
             <table className="min-w-full border-collapse">
               <thead>
                 <tr className="bg-gray-200 text-left">
-                  <th className="p-3">No</th>
-                  <th className="p-3">Tanggal</th>
-                  <th className="p-3">Menu</th>
-                  <th className="p-3">Subtotal</th>
-                  <th className="p-3">Pajak</th>
-                  <th className="p-3">Layanan</th>
-                  <th className="p-3">Total</th>
-                  <th className="p-3">Status</th>
-                  <th className="p-3">Aksi</th>
+                  <th className="p-3 text-[#000]">No</th>
+                  <th className="p-3 text-[#000]">Tanggal</th>
+                  <th className="p-3 text-[#000]">Menu</th>
+                  <th className="p-3 text-[#000]">Subtotal</th>
+                  <th className="p-3 text-[#000]">Pajak</th>
+                  <th className="p-3 text-[#000]">Layanan</th>
+                  <th className="p-3 text-[#000]">Total</th>
+                  <th className="p-3 text-[#000]">Status</th>
+                  <th className="p-3 text-[#000]">Aksi</th>
                 </tr>
               </thead>
               <tbody>

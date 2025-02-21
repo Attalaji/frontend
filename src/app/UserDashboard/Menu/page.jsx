@@ -136,7 +136,7 @@ function page() {
 
           {/* PESANAN SECTION */}
           <div className="bg-white rounded-lg shadow p-6 w-full max-h-fit max-w-md ml-auto">
-            <h3 className="text-lg font-bold mb-4">Pesanan Saya</h3>
+            <h3 className="text-lg font-bold mb-4 text-black">Pesanan Saya</h3>
             {orders.length === 0 ? (
               <p className="text-gray-600">Belum ada pesanan</p>
             ) : (
