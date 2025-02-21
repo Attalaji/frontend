@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../Asset/Assetnavbar/Logomysteak.jpg';
+import Logo from '../Asset/Assetnavbar/LogoMySteak.svg';
 import { useRouter } from 'next/navigation';
 
 const Navbar = () => {

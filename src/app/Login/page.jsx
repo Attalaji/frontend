@@ -38,8 +38,11 @@ const page = () => {
       }
 
       // Redirect ke dashboard (ubah sesuai kebutuhan)
-      router.push("/dashboard");
+      router.push("/UserDashboard");
+    } else {
+      setError("Email atau password salah!");
     }
+    
     if (email === "admin@example.com" && password === "adminpassword") {
       if (rememberMe) {
         localStorage.setItem("rememberedEmail", email);
@@ -48,7 +51,7 @@ const page = () => {
       }
 
       // Redirect ke dashboard (ubah sesuai kebutuhan)
-      router.push("/dashboardAdmin");
+      router.push("/AdminDashboard");
     } else {
       setError("Email atau password salah!");
     }
