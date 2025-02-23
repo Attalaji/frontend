@@ -92,7 +92,7 @@ function page() {
                   <th className="p-3 text-[#000]">Tanggal & Waktu</th>
                   <th className="p-3 text-[#000]">Jumlah Orang</th>
                   <th className="p-3 text-[#000]">Status</th>
-                  <th className="p-3 text-[#000]">Aksi</th>
+                  <th className="p-3 text-[#000]"></th>
                 </tr>
               </thead>
               <tbody>

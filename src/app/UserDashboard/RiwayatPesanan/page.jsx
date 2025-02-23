@@ -88,7 +88,7 @@ function page() {
                   <th className="p-3 text-[#000]">Layanan</th>
                   <th className="p-3 text-[#000]">Total</th>
                   <th className="p-3 text-[#000]">Status</th>
-                  <th className="p-3 text-[#000]">Aksi</th>
+                  <th className="p-3 text-[#000]"></th>
                 </tr>
               </thead>
               <tbody>
