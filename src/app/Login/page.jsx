@@ -5,18 +5,19 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import axios from "axios";
 import Background from "../Asset/Assethome/Background.jpg";
 
 const page = () => {
   const router = useRouter();
 
-  // State untuk input dan status Remember Me
+  // State for input fields and Remember Me status
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
 
-  // Cek localStorage remember Me
+  // Load remembered email on mount
   useEffect(() => {
     const savedEmail = localStorage.getItem("rememberedEmail");
     if (savedEmail) {
@@ -25,34 +26,40 @@ const page = () => {
     }
   }, []);
 
-  // Fungsi login
-  const handleLogin = (e) => {
+  // Handle login
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous errors
 
-    // Simulasi validasi sederhana
-    if (email === "user@example.com" && password === "password123") {
-      if (rememberMe) {
-        localStorage.setItem("rememberedEmail", email);
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/login",
+        { email, password },
+        { withCredentials: true }
+      );
+
+      if (response.data.token) {
+        // Store token
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+
+        // Remember email if checked
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", email);
+        } else {
+          localStorage.removeItem("rememberedEmail");
+        }
+
+        // Redirect based on role
+        if (response.data.user.role === "admin") {
+          router.push("/AdminDashboard");
+        } else {
+          router.push("/UserDashboard/Menu");
+        }
       } else {
-        localStorage.removeItem("rememberedEmail");
+        setError("Invalid login credentials!");
       }
-
-      // Redirect ke dashboard (ubah sesuai kebutuhan)
-      router.push("/UserDashboard/Menu");
-    } else {
-      setError("Email atau password salah!");
-    }
-    
-    if (email === "admin@example.com" && password === "adminpassword") {
-      if (rememberMe) {
-        localStorage.setItem("rememberedEmail", email);
-      } else {
-        localStorage.removeItem("rememberedEmail");
-      }
-
-      // Redirect ke dashboard (ubah sesuai kebutuhan)
-      router.push("/AdminDashboard");
-    } else {
+    } catch (error) {
       setError("Email atau password salah!");
     }
   };
@@ -65,7 +72,7 @@ const page = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-      {/* Card */}
+      {/* Login Card */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
