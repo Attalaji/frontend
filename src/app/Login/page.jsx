@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import axios from "axios";
 import Background from "../Asset/Assethome/Background.jpg";
-
 const page = () => {
   const router = useRouter();
 
