@@ -50,8 +50,8 @@ export default function Home() {
           <div>
             <h1 className="md:text-7xl text-5xl font-bold mb-4">MySteak</h1>
             <p className="md:text-xl sm:text-lg md:mb-8 mb-4 md:max-w-xl sm:max-w-lg text-md max-w-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias.
-              Lorem, ipsum dolor. Lorem ipsum dolor sit.
+            Daging pilihan, rasa luar biasa.
+            MySteak menghadirkan kelezatan yang menggoda di setiap gigitan.
             </p>
             <div className="flex md:justify-normal justify-center gap-4">
               <Link
@@ -91,11 +91,9 @@ export default function Home() {
               TENTANG KAMI
             </h2>
             <p className="text-white mb-12 text-wrap max-w-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-              aspernatur. Dolores, a iste. Veritatis, inventore! Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Natus nostrum dolorem
-              quisquam sint! Corrupti, in quisquam possimus et harum magnam ad
-              quas.
+            MySteak adalah destinasi sempurna bagi para pecinta steak premium.
+Kami menghidangkan daging pilihan terbaik, dimasak dengan teknik sempurna untuk menghadirkan cita rasa tak terlupakan.
+Dengan suasana nyaman dan pelayanan istimewa, MySteak siap menjadi tempat favorit Anda untuk merayakan momen spesial.
             </p>
             <div className="flex-row lg:flex justify-between xl:gap-12 lg:gap-8 mb-16">
               <div className="xl:w-[70rem] lg:w-[70rem] md:w-[50%] md:mb-8 w-[0] h-full md:border-[#6B6B6B] md:border-4">
@@ -115,22 +113,19 @@ export default function Home() {
                   <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Totam saepe perferendis et!
+                    Daging pilihan terbaik, dimasak dengan standar internasional untuk rasa yang sempurna.
                     </span>
                   </div>
                   <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Earum a illum cum nemo duci?
+                    Suasana restoran yang nyaman dan elegan, cocok untuk keluarga, pasangan, maupun acara bisnis.
                     </span>
                   </div>
                   <div className="flex items-center gap-6">
                     <IoMdCheckmarkCircleOutline className="text-[#5D431A] size-7" />
                     <span>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Repellat, veniam aperiam!
+                    Pelayanan ramah dan profesional untuk memastikan pengalaman bersantap Anda lebih berkesan. 
                     </span>
                   </div>
                 </div>
@@ -139,38 +134,35 @@ export default function Home() {
                   layanan terbaik kami.
                 </p>
               </div>
+     
             </div>
           </div>
           {/* Section */}
           <div>
             <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">
-              JUDULJUDUL
+              OUR SPECIALTY
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
               <div className="bg-[#836a41ce] p-8">
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Error amet iusto, incidunt praesentium atque possimus
-                  voluptate? Lorem ipsum dolor sit, amet consectetur adipisicing
-                  elit. Eos recusandae molestias in.
+                
+Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidangan yang kami sajikan.
                 </p>
               </div>
 
               <div className="bg-[#836a41ce] p-8">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                  provident enim rerum, hic eos consequatur pariatur. Lorem
-                  ipsum dolor sit amet, consectetur adipisicing elit. In
-                  deserunt eum velit!
+                Nikmati pengalaman bersantap di tempat yang elegan, tenang, dan ramah untuk keluarga ataupun acara bisnis.
+
+
                 </p>
               </div>
 
               <div className="bg-[#836a41ce] p-8">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Suscipit corporis aspernatur dicta veritatis quam consequuntur
-                  non. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni suscipit sequi voluptatum?
+                Tim kami siap memberikan pelayanan terbaik, dari saat Anda tiba hingga hidangan terakhir.
+
+
                 </p>
               </div>
             </div>

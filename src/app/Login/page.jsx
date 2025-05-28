@@ -1,68 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import axios from "axios";
+import { useAuth } from '../context/AuthContext'
 import Background from "../Asset/Assethome/Background.jpg";
-const page = () => {
-  const router = useRouter();
+import React from 'react'
 
-  // State for input fields and Remember Me status
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState("");
-
-  // Load remembered email on mount
-  useEffect(() => {
-    const savedEmail = localStorage.getItem("rememberedEmail");
-    if (savedEmail) {
-      setEmail(savedEmail);
-      setRememberMe(true);
-    }
-  }, []);
-
-  // Handle login
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError(""); // Clear previous errors
-
+function page () {
+  const { login } = useAuth()
+  const [form, setForm] = React.useState({
+    email: '',
+    password: ''
+  })
+  const [error, setError] = React.useState('')
+  const handleChange = (e) => {
+    setForm({
+        ...form,
+        [e.target.name]: e.target.value
+    });
+};
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/login",
-        { email, password },
-        { withCredentials: true }
-      );
-
-      if (response.data.token) {
-        // Store token
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-
-        // Remember email if checked
-        if (rememberMe) {
-          localStorage.setItem("rememberedEmail", email);
-        } else {
-          localStorage.removeItem("rememberedEmail");
-        }
-
-        // Redirect based on role
-        if (response.data.user.role === "admin") {
-          router.push("/AdminDashboard");
-        } else {
-          router.push("/UserDashboard/Menu");
-        }
-      } else {
-        setError("Invalid login credentials!");
-      }
+      await login(form)
     } catch (error) {
-      setError("Email atau password salah!");
+      setError(error.response.data.message)
     }
-  };
-
+  }
   return (
     <div
       className="relative flex items-center justify-center min-h-screen bg-cover bg-center"
@@ -85,7 +50,7 @@ const page = () => {
         {/* Error Message */}
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit}>
           {/* Email Input */}
           <div className="mb-4">
             <label className="flex items-center gap-2 bg-transparent border border-gray-400 p-3 rounded-full">
@@ -93,8 +58,8 @@ const page = () => {
               <input
                 type="email"
                 placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                onChange={handleChange}
                 required
                 className="w-full bg-transparent outline-none text-white placeholder-gray-300"
               />
@@ -108,8 +73,8 @@ const page = () => {
               <input
                 type="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                name='password'
+                onChange={handleChange}
                 required
                 className="w-full bg-transparent outline-none text-white placeholder-gray-300"
               />
@@ -121,8 +86,8 @@ const page = () => {
             <label className="flex items-center gap-2">
               <input
                 type="checkbox"
-                checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
+                // checked={rememberMe}
+                // onChange={() => setRememberMe(!rememberMe)}
                 className="w-4 h-4"
               />
               Remember Me

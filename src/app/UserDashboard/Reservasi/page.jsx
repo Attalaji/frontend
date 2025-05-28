@@ -1,7 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Sidebar from "../../components/Sidebar";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { FaCheck, FaTimes, FaEdit } from "react-icons/fa";
+import useAuthMiddleware from "../../hooks/auth";
 
 const statusColors = {
   Menunggu: "bg-yellow-500 text-white",
@@ -9,70 +11,107 @@ const statusColors = {
   Diterima: "bg-green-500 text-white",
 };
 
-function page() {
-  // 🔹 Data dummy untuk reservasi
-  const [reservations, setReservations] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      date: "2024-12-05 18:00",
-      guests: 4,
-      status: "Menunggu",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      date: "2024-12-04 19:30",
-      guests: 2,
-      status: "Diterima",
-    },
-    {
-      id: 3,
-      name: "Michael Lee",
-      date: "2024-12-03 17:00",
-      guests: 5,
-      status: "Diterima",
-    },
-  ]);
+function Page() {
+  useAuthMiddleware();
 
-  // State untuk mengedit reservasi
-  const [editingReservation, setEditingReservation] = useState(null);
-  const [updatedName, setUpdatedName] = useState("");
-  const [updatedDate, setUpdatedDate] = useState("");
-  const [updatedGuests, setUpdatedGuests] = useState("");
+  const [reservations, setReservations] = useState([]);
+  const [editing, setEditing] = useState(null); // ID of reservation being edited
+  const [editForm, setEditForm] = useState({
+    name: "",
+    guests: "",
+    phone: "",
+    email: "",
+  });
 
-  // Fungsi untuk membuka form edit
-  const handleEditReservation = (reservation) => {
-    setEditingReservation(reservation);
-    setUpdatedName(reservation.name);
-    setUpdatedDate(reservation.date.replace(" ", "T")); // Mengonversi spasi jadi T untuk datetime-local
-    setUpdatedGuests(reservation.guests);
+  // Fetch reservations
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get("http://localhost:8000/api/reservasi");
+        setReservations(
+          data.map((r) => ({
+            id: r.id,
+            name: r.nama,
+            date: r.tanggal_waktu,
+            guests: r.jumlah_orang,
+            phone: r.telepon,
+            email: r.email,
+            status: r.status,
+          }))
+        );
+      } catch (e) {
+        console.error("Gagal load reservasi:", e);
+      }
+    })();
+  }, []);
+
+  const handleConfirm = async (id) => {
+    try {
+      await axios.put(`http://localhost:8000/api/reservasi/${id}`, {
+        status: "Diterima",
+      });
+      setReservations((prev) =>
+        prev.map((r) => (r.id === id ? { ...r, status: "Diterima" } : r))
+      );
+    } catch (e) {
+      console.error("Gagal konfirmasi:", e);
+    }
   };
 
-  // Fungsi untuk menyimpan perubahan
-  const handleSaveEdit = () => {
-    const updatedReservations = reservations.map((reservation) =>
-      reservation.id === editingReservation.id
-        ? {
-            ...reservation,
-            name: updatedName,
-            date: updatedDate.replace("T", " "),
-            guests: updatedGuests,
-          }
-        : reservation
-    );
-    setReservations(updatedReservations);
-    setEditingReservation(null); // Menutup modal atau form edit
+  const handleCancel = async (id) => {
+    try {
+      await axios.put(`http://localhost:8000/api/reservasi/${id}`, {
+        status: "Dibatalkan",
+      });
+      setReservations((prev) =>
+        prev.map((r) => (r.id === id ? { ...r, status: "Dibatalkan" } : r))
+      );
+    } catch (e) {
+      console.error("Gagal batalkan:", e);
+    }
   };
 
-  // 🔹 Fungsi membatalkan reservasi dengan status "Menunggu"
-  const handleCancelReservation = (id) => {
-    const updatedReservations = reservations.map((reservation) =>
-      reservation.id === id && reservation.status
-        ? { ...reservation, status: "Dibatalkan" }
-        : reservation
-    );
-    setReservations(updatedReservations);
+  const handleEdit = (id) => {
+    const r = reservations.find((r) => r.id === id);
+    if (!r) return;
+    setEditing(id);
+    setEditForm({
+      name: r.name,
+      guests: r.guests,
+      phone: r.phone,
+      email: r.email,
+    });
+  };
+
+  const handleEditSave = async () => {
+    try {
+      await axios.put(`http://localhost:8000/api/reservasi/${editing}`, {
+        nama: editForm.name,
+        jumlah_orang: editForm.guests,
+        telepon: editForm.phone,
+        email: editForm.email,
+      });
+
+      setReservations((prev) =>
+        prev.map((r) =>
+          r.id === editing
+            ? {
+                ...r,
+                name: editForm.name,
+                guests: editForm.guests,
+                phone: editForm.phone,
+                email: editForm.email,
+              }
+            : r
+        )
+      );
+
+      setEditing(null);
+      alert("Reservasi berhasil diperbarui!");
+    } catch (error) {
+      console.error("Gagal update reservasi:", error);
+      alert("Terjadi kesalahan saat memperbarui reservasi.");
+    }
   };
 
   return (
@@ -87,59 +126,54 @@ function page() {
             <table className="min-w-full border-collapse">
               <thead>
                 <tr className="bg-gray-200 text-left">
-                  <th className="p-3 text-[#000]">No</th>
-                  <th className="p-3 text-[#000]">Nama</th>
-                  <th className="p-3 text-[#000]">Tanggal & Waktu</th>
-                  <th className="p-3 text-[#000]">Jumlah Orang</th>
-                  <th className="p-3 text-[#000]">Status</th>
-                  <th className="p-3 text-[#000]"></th>
+                  <th className="p-3">No</th>
+                  <th className="p-3">Nama</th>
+                  <th className="p-3">Tanggal & Waktu</th>
+                  <th className="p-3">Jumlah Orang</th>
+                  <th className="p-3">Telepon</th>
+                  <th className="p-3">Email</th>
+                  <th className="p-3">Status</th>
+                  <th className="p-3">Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                {reservations.map((reservation, index) => (
-                  <tr key={reservation.id} className="border-t text-black">
-                    <td className="p-3">{index + 1}</td>
-                    <td className="p-3">{reservation.name}</td>
-                    <td className="p-3">{reservation.date}</td>
-                    <td className="p-3">{reservation.guests}</td>
+                {reservations.map((r, i) => (
+                  <tr key={r.id} className="border-t text-black">
+                    <td className="p-3">{i + 1}</td>
+                    <td className="p-3">{r.name}</td>
+                    <td className="p-3">{r.date}</td>
+                    <td className="p-3">{r.guests}</td>
+                    <td className="p-3">{r.phone}</td>
+                    <td className="p-3">{r.email}</td>
                     <td className="p-3">
                       <span
-                        className={`px-2 py-1 text-sm rounded ${
-                          statusColors[reservation.status]
-                        }`}
+                        className={`px-2 py-1 rounded text-sm ${statusColors[r.status]}`}
                       >
-                        {reservation.status}
+                        {r.status}
                       </span>
                     </td>
-                    <td className="p-3">
-                      {reservation.status === "Menunggu" && (
-                        <>
-                          <button
-                            className="text-blue-600 hover:text-blue-800"
-                            onClick={() => handleEditReservation(reservation)} // Tambahkan fungsi handle edit
-                          >
-                            <MdEdit size={20} />
-                          </button>
-                          <button
-                            className="text-red-600 hover:text-red-800"
-                            onClick={() =>
-                              handleCancelReservation(reservation.id)
-                            }
-                          >
-                            <MdDelete size={20} />
-                          </button>
-                        </>
-                      )}
-                      {reservation.status !== "Menunggu" && (
-                        <button
-                          className="text-red-600 hover:text-red-800"
-                          onClick={() =>
-                            handleCancelReservation(reservation.id)
-                          }
-                        >
-                          <MdDelete size={20} />
-                        </button>
-                      )}
+                    <td className="p-3 flex gap-2">
+                      <button
+                        title="Edit reservasi"
+                        onClick={() => handleEdit(r.id)}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        <FaEdit size={20} />
+                      </button>
+                      <button
+                        title="Konfirmasi reservasi"
+                        onClick={() => handleConfirm(r.id)}
+                        className="text-green-600 hover:text-green-800"
+                      >
+                        <FaCheck size={20} />
+                      </button>
+                      <button
+                        title="Batalkan reservasi"
+                        onClick={() => handleCancel(r.id)}
+                        className="text-red-600 hover:text-red-800"
+                      >
+                        <FaTimes size={20} />
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -149,50 +183,62 @@ function page() {
         </div>
       </main>
 
-      {/* Form Edit Modal */}
-      {editingReservation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+      {/* Modal for Editing */}
+      {editing && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded shadow-md w-[90%] max-w-md">
             <h3 className="text-lg font-bold mb-4">Edit Reservasi</h3>
-            <div className="mb-4">
-              <label className="block text-sm mb-2">Nama</label>
-              <input
-                type="text"
-                value={updatedName}
-                onChange={(e) => setUpdatedName(e.target.value)}
-                className="border p-2 w-full"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-sm mb-2">Tanggal & Waktu</label>
-              <input
-                type="datetime-local"
-                value={updatedDate}
-                onChange={(e) => setUpdatedDate(e.target.value)}
-                className="border p-2 w-full"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-sm mb-2">Jumlah Orang</label>
-              <input
-                type="number"
-                value={updatedGuests}
-                onChange={(e) => setUpdatedGuests(e.target.value)}
-                className="border p-2 w-full"
-              />
-            </div>
-            <div className="flex gap-2">
+
+            <label className="block text-sm mb-1">Nama</label>
+            <input
+              className="w-full border p-2 mb-4"
+              value={editForm.name}
+              onChange={(e) =>
+                setEditForm({ ...editForm, name: e.target.value })
+              }
+            />
+
+            <label className="block text-sm mb-1">Jumlah Orang</label>
+            <input
+              className="w-full border p-2 mb-4"
+              type="number"
+              value={editForm.guests}
+              onChange={(e) =>
+                setEditForm({ ...editForm, guests: e.target.value })
+              }
+            />
+
+            <label className="block text-sm mb-1">Telepon</label>
+            <input
+              className="w-full border p-2 mb-4"
+              value={editForm.phone}
+              onChange={(e) =>
+                setEditForm({ ...editForm, phone: e.target.value })
+              }
+            />
+
+            <label className="block text-sm mb-1">Email</label>
+            <input
+              className="w-full border p-2 mb-4"
+              type="email"
+              value={editForm.email}
+              onChange={(e) =>
+                setEditForm({ ...editForm, email: e.target.value })
+              }
+            />
+
+            <div className="flex justify-end gap-2">
               <button
-                onClick={handleSaveEdit}
-                className="bg-blue-500 hover:bg-blue-800 text-white py-2 px-4 rounded"
-              >
-                Simpan
-              </button>
-              <button
-                onClick={() => setEditingReservation(null)}
-                className="bg-gray-500 hover:bg-gray-800 text-white py-2 px-4 rounded"
+                onClick={() => setEditing(null)}
+                className="px-4 py-2 bg-gray-500 text-white rounded"
               >
                 Batal
+              </button>
+              <button
+                onClick={handleEditSave}
+                className="px-4 py-2 bg-blue-600 text-white rounded"
+              >
+                Simpan
               </button>
             </div>
           </div>
@@ -202,4 +248,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

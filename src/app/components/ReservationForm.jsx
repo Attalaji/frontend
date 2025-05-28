@@ -1,11 +1,12 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function ReservationForm() {
   const [formData, setFormData] = useState({
     nama: "",
     jumlahOrang: "",
     email: "",
-    nomor: "",
+    telepon: "",
     tanggal: "",
     waktu: "",
     pesan: "",
@@ -24,8 +25,8 @@ export default function ReservationForm() {
     } else if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.email)) {
       newErrors.email = "Gunakan email @gmail.com";
     }
-    if (!formData.nomor.trim() || !/^\d+$/.test(formData.nomor))
-      newErrors.nomor = "Masukkan nomor yang valid (hanya angka)";
+    if (!formData.telepon.trim() || !/^\d+$/.test(formData.telepon))
+      newErrors.telepon = "Masukkan nomor yang valid (hanya angka)";
     if (!formData.tanggal.trim()) newErrors.tanggal = "Tanggal wajib diisi";
     if (!formData.waktu.trim()) newErrors.waktu = "Waktu wajib diisi";
 
@@ -37,16 +38,40 @@ export default function ReservationForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      alert("Form berhasil dikirim!");
+    if (!validateForm()) return;
+
+    const payload = {
+      nama: formData.nama,
+      jumlah_orang: formData.jumlahOrang,
+      tanggal_waktu: `${formData.tanggal} ${formData.waktu}`,
+      telepon: formData.telepon,
+      email: formData.email,
+      pesan: formData.pesan,
+    };
+
+    try {
+      await axios.post("http://localhost:8000/api/reservasi", payload);
+      alert("Reservasi berhasil dikirim!");
+      setFormData({
+        nama: "",
+        jumlahOrang: "",
+        email: "",
+        telepon: "",
+        tanggal: "",
+        waktu: "",
+        pesan: "",
+      });
+      setErrors({});
+    } catch (error) {
+      console.error("Gagal kirim:", error);
+      alert("Terjadi kesalahan saat mengirim reservasi.");
     }
   };
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
-      {/* Grid for 2-column inputs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <input
@@ -91,14 +116,14 @@ export default function ReservationForm() {
         <div>
           <input
             type="tel"
-            name="nomor"
-            placeholder="Nomor"
-            value={formData.nomor}
+            name="telepon"
+            placeholder="Nomor Telepon"
+            value={formData.telepon}
             onChange={handleChange}
             className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80"
           />
-          {errors.nomor && (
-            <p className="text-red-500 text-sm">{errors.nomor}</p>
+          {errors.telepon && (
+            <p className="text-red-500 text-sm">{errors.telepon}</p>
           )}
         </div>
 
@@ -108,7 +133,7 @@ export default function ReservationForm() {
             name="tanggal"
             value={formData.tanggal}
             onChange={handleChange}
-            className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
+            className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
           />
           {errors.tanggal && (
             <p className="text-red-500 text-sm">{errors.tanggal}</p>
@@ -121,7 +146,7 @@ export default function ReservationForm() {
             name="waktu"
             value={formData.waktu}
             onChange={handleChange}
-            className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 placeholder-[#C59E5F]/70 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
+            className="w-full bg-transparent border border-[#C59E5F] rounded px-4 py-2 focus:outline-none focus:border-[#C59E5F]/80 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
           />
           {errors.waktu && (
             <p className="text-red-500 text-sm">{errors.waktu}</p>

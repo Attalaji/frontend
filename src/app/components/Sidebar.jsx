@@ -1,32 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Logo from "../Asset/Assetnavbar/LogoMySteak.svg";
-import { IoMenu } from "react-icons/io5";
-import { RiFileHistoryLine } from "react-icons/ri";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
 import { useRouter } from "next/navigation";
 
-function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
-  const [menuOpen, setMenuOpen] = useState(false); // Untuk dropdown menu
+function Sidebar({ drawerOpen, setDrawerOpen }) {
   const router = useRouter();
-
-  // Fungsi untuk mengubah kategori & navigasi ke halaman menu
-  const handleCategoryClick = (category) => {
-    if (setSelectedCategory) { // Pastikan `setSelectedCategory` ada
-      setSelectedCategory(category);
-    }
-    if (typeof setDrawerOpen === "function") {
-      setDrawerOpen(false); // Tutup drawer jika di layar kecil
-    }
-    router.push("/UserDashboard/Menu"); // Navigasi ke halaman menu
-  };
 
   return (
     <div>
-      {/* Tombol untuk toggle sidebar (mobile) */}
+      {/* Toggle sidebar button (mobile) */}
       <button
         onClick={() => setDrawerOpen(!drawerOpen)}
         aria-controls="logo-sidebar"
@@ -34,7 +19,6 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
         className="inline-flex items-center p-2 mt-2 ms-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
       >
         <span className="sr-only">Open sidebar</span>
-        <IoMenu size={24} />
       </button>
 
       {/* Sidebar */}
@@ -60,64 +44,7 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
           </a>
 
           <ul className="space-y-2 font-medium">
-            {/* Tombol untuk menampilkan semua menu */}
-            <li>
-              <button
-                onClick={() => {
-                  handleCategoryClick("All");
-                  setMenuOpen(!menuOpen); // Toggle dropdown
-                }}
-                className="flex items-center w-full p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
-              >
-                <IoMenu size={20} className="text-gray-400 group-hover:text-white" />
-                <span className="ms-3">Menu</span>
-                <IoIosArrowDown
-                  className={`ml-auto transition-transform ${
-                    menuOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                />
-              </button>
-              {/* Submenu */}
-              {menuOpen && (
-                <ul className="ml-6">
-                  {[
-                    "Steak",
-                    "Chicken",
-                    "Nasi Goreng",
-                    "Pasta",
-                    "Paket",
-                    "Minuman",
-                    "Sides",
-                    "Desserts",
-                  ].map((category) => (
-                    <li key={category}>
-                      <button
-                        onClick={() => handleCategoryClick(category)}
-                        className="block w-full text-left p-2 text-white hover:bg-[#C59E5F] rounded"
-                      >
-                        {category}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            {/* Menu Tambahan */}
-            <li>
-              <a
-                href="/UserDashboard/RiwayatPesanan"
-                className="flex items-center p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
-              >
-                <RiFileHistoryLine
-                  size={20}
-                  className="text-gray-400 group-hover:text-white"
-                />
-                <span className="flex-1 ms-3 whitespace-nowrap">
-                  Riwayat Pesanan
-                </span>
-              </a>
-            </li>
+            {/* Reservation Section */}
             <li>
               <a
                 href="/UserDashboard/Reservasi"
@@ -130,6 +57,19 @@ function Sidebar({ drawerOpen, setDrawerOpen, setSelectedCategory }) {
                 <span className="flex-1 ms-3 whitespace-nowrap">Reservasi</span>
               </a>
             </li>
+
+            {/* ✅ New "Riwayat Reservasi" Section */}
+            <li>
+              <a
+                href="/UserDashboard/RiwayatReservasi"
+                className="flex items-center p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
+              >
+                <FaRegCalendarCheck size={20} className="text-gray-400 group-hover:text-white" />
+                <span className="flex-1 ms-3 whitespace-nowrap">Riwayat Reservasi</span>
+              </a>
+            </li>
+
+            {/* Logout Section */}
             <li>
               <a
                 href="/Login"

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "../app/context/AuthContext";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,7 +30,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        {/* AuthProvider digunakan untuk menyediakan konteks autentikasi */}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

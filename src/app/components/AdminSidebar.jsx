@@ -11,21 +11,9 @@ import { useRouter } from "next/navigation";
 function AdminSidebar({ drawerOpen, setDrawerOpen }) {
   const router = useRouter();
 
-  // Fungsi untuk mengubah kategori & navigasi ke halaman menu
-  const handleCategoryClick = (category) => {
-    if (setSelectedCategory) {
-      // Pastikan `setSelectedCategory` ada
-      setSelectedCategory(category);
-    }
-    if (typeof setDrawerOpen === "function") {
-      setDrawerOpen(false); // Tutup drawer jika di layar kecil
-    }
-    router.push("/UserDashboard/Menu"); // Navigasi ke halaman menu
-  };
-
   return (
     <div>
-      {/* Tombol untuk toggle sidebar (mobile) */}
+      {/* Toggle sidebar button (mobile) */}
       <button
         onClick={() => setDrawerOpen(!drawerOpen)}
         aria-controls="logo-sidebar"
@@ -59,21 +47,7 @@ function AdminSidebar({ drawerOpen, setDrawerOpen }) {
           </a>
 
           <ul className="space-y-2 font-medium">
-            {/* Tombol untuk menampilkan semua menu */}
-            <li>
-              <a
-                href="/AdminDashboard/Menu"
-                className="flex items-center w-full p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
-              >
-                <IoMenu
-                  size={20}
-                  className="text-gray-400 group-hover:text-white"
-                />
-                <span className="ms-3">Menu</span>
-              </a>
-            </li>
-
-            {/* Menu Tambahan */}
+            {/* Order Management */}
             <li>
               <a
                 href="/AdminDashboard/Pesanan"
@@ -86,6 +60,7 @@ function AdminSidebar({ drawerOpen, setDrawerOpen }) {
                 <span className="flex-1 ms-3 whitespace-nowrap">Pesanan</span>
               </a>
             </li>
+            {/* Reservation Management */}
             <li>
               <a
                 href="/AdminDashboard/Reservasi"
@@ -98,6 +73,7 @@ function AdminSidebar({ drawerOpen, setDrawerOpen }) {
                 <span className="flex-1 ms-3 whitespace-nowrap">Reservasi</span>
               </a>
             </li>
+            {/* Logout */}
             <li>
               <a
                 href="/Login"
