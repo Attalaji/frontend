@@ -7,9 +7,6 @@ import ReservationForm from "../components/ReservationForm";
 import ContactForm from "../components/ContactForm";
 import VideoModal from "../components/VideoModal";
 
-import { Play, Section } from "lucide-react";
-import { Check } from "lucide-react";
-
 import Event from "../Asset/Assethome/Event.png";
 import Events from "../Asset/Assethome/Events.jpg";
 import Bg_Tentangkami from "../Asset/Assethome/Tentangkami.jpg";
@@ -17,6 +14,9 @@ import Background from "../Asset/Assethome/Background.jpg";
 import Res from "../Asset/Assethome/fotores.jpg";
 import Makanan from "../Asset/Assethome/Makanan.png";
 import glr1 from "../Asset/Assethome/Gallery1.png";
+import events1 from "../Asset/Assethome/events1.jpg";
+import events2 from "../Asset/Assethome/events2.jpg";
+import events3 from "../Asset/Assethome/events3.jpg";
 
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
@@ -175,156 +175,144 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
       <div id="menu" className="relative bg-black">
         <div className="container w-[90%] mx-auto py-24">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">MENU</h2>
-          <div className="md:flex justify-between xl:justify-around xl:w-[95%] w-[98%] flex-row">
+          <div className="md:flex justify-between xl:justify-around xl:w-[95%] w-[98%] flex-row gap-4">
             {/* Left Column */}
             <div className="space-y-4">
               {/* Menu Item 1 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu1
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Prime Tenderloin Steak (Regular)"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Prime Tenderloin Steak (Regular) | <span className="text-[#C59E5F] font-semibold text-base">99.5k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Steak tenderloin tanpa lemak dengan tekstur lembut dan rasa gurih.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 2 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu2
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Prime Tenderloin Steak (Large)"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Prime Tenderloin Steak (Large) | <span className="text-[#C59E5F] font-semibold text-base">120.5k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Porsi besar tenderloin steak yang empuk dan juicy.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 3 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu3
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Supreme Sirloin Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Supreme Sirloin Steak | <span className="text-[#C59E5F] font-semibold text-base">126k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Sirloin steak premium dengan ukuran besar dan rasa yang menggugah selera.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 4 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu4
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Chicken Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Chicken Steak | <span className="text-[#C59E5F] font-semibold text-base">68k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Daging ayam panggang dengan bumbu spesial dan saus lezat.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 5 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu5
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Beef Steak with Mushroom Sauce"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Chop Steak | <span className="text-[#C59E5F] font-semibold text-base">78k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Daging olahan MySteak yang dimasak dengan bumbu khusus.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 6 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu6
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Pork Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Chicken Special | <span className="text-[#C59E5F] font-semibold text-base">70k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Daging ayam yang dimasak dua kali dengan saus special MySteak.
+                  </p>
                 </div>
               </div>
             </div>
@@ -332,152 +320,140 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
             {/* Right Column */}
             <div className="space-y-4 mt-4 md:mt-0">
               {/* Menu Item 7 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu7
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Grilled Salmon Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Grilled Salmon Steak | <span className="text-[#C59E5F] font-semibold text-base">138k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Ikan salmon panggang dengan bumbu khas dan saus lemon.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 8 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu8
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Lamb Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Combi Steak | <span className="text-[#C59E5F] font-semibold text-base">78.5k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Perpaduan 2 daging serta ditambah kentang dan sayuran.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 9 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu9
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Blackpepper Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Prime Lamb Chop | <span className="text-[#C59E5F] font-semibold text-base">136k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Potongan yang berasal dari tulang rusuk domba yang empuk dan kaya rasa.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 10 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu10
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] gap-8 border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Tenderloin Steak with Cheese"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Supreme Ribeye | <span className="text-[#C59E5F] font-semibold text-base">158k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Potongan tulang rusuk sapi yang memiliki lemak marbel yang kaya.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 11 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu11
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Cheeseburger Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Wagyu Ribeye | <span className="text-[#C59E5F] font-semibold text-base">268k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Potongan daging sapi wagyu yang mengandung marbling dalam jumlah tinggi.
+                  </p>
                 </div>
               </div>
 
               {/* Menu Item 12 */}
-              <div className="flex items-center">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden">
-                    <Image
-                      src={Makanan}
-                      alt="Menu 1"
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-[#C59E5F] text-lg font-medium flex items-center gap-2">
-                      Menu12
-                      <hr className="xl:min-w-[90%] lg:w-[14rem] md:w-[50%] sm:w-[20rem] w-[100%] border-[#C59E5F] rounded-sm border-[1.5px]" />
-                      <span className="text-[#C59E5F] font-medium">50k</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={Makanan}
+                    alt="Grilled Chicken Steak"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[#C59E5F] text-lg font-medium">
+                      Prime Rib Eye | <span className="text-[#C59E5F] font-semibold text-base">125k</span>
                     </h3>
-                    <p className="text-[#836A41] text-sm">
-                      Lorem ipsum dolor sit amet consectetur
-                    </p>
                   </div>
+                  <p className="text-[#836A41] text-sm mt-1">
+                    Potongan daging sapi yang memiliki lemak marbel yang kaya.
+                  </p>
                 </div>
               </div>
             </div>
@@ -505,21 +481,20 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
           <div className="flex flex-col md:flex-row justify-between md:items-center items-start gap-8 mb-16">
             <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
-                Events1
+                Grand Opening My Steak Indonesia di Trans Studio Mall (TSM) Makassar
               </h3>
               <p className="text-sm lg:text-lg md:text-md leading-relaxed">
-                laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
-                Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
-                non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
-                Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
+                My Steak Indonesia resmi membuka cabang barunya di TSM Makassar, 
+                menawarkan berbagai pilihan steak premium dengan cita rasa khas Indonesia. 
+                Acara pembukaan ini menarik banyak pengunjung dan pecinta kuliner di Makassar.
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
-                  src={Event}
+                  src={events1}
                   alt="Event 1"
-                  className="object-cover w-full h-full"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -529,21 +504,20 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
           <div className="flex flex-col md:flex-row-reverse justify-between md:items-center items-start gap-8 mb-16">
             <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
-                Events2
+                Promo Diskon 30% di My Steak TSM Makassar
               </h3>
               <p className="text-sm lg:text-lg md:text-md leading-relaxed">
-                laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
-                Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
-                non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
-                Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
+                Dalam rangka menyambut pembukaan cabang baru, My Steak Indonesia 
+                memberikan diskon spesial sebesar 30% untuk semua menu. Promo ini berlaku 
+                untuk dine-in dan menarik banyak pelanggan baru.
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
-                  src={Event}
+                  src={events2}
                   alt="Event 2"
-                  className="object-cover w-full h-full"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -553,21 +527,20 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
           <div className="flex flex-col md:flex-row justify-between md:items-center items-start gap-8">
             <div className="md:w-[45%] md:order-none order-1">
               <h3 className="text-[#C59E5F] text-2xl font-medium mb-4">
-                Events3
+                Peluncuran Menu Korean BBQ Steak
               </h3>
               <p className="text-sm lg:text-lg md:text-md leading-relaxed">
-                laoreet Lorem sodales, amet, vehicula Praesent eget.Nunc odio
-                Lorem eu id Sed nisi fringilla Cras tincidunt vehicula, cursus
-                non, nec risus non vitae ex vel emi eu id Sed nisi fringilla
-                Cras tincidunt vehicula, cursus non, nec risus non vitae ex vel
+                My Steak Indonesia memperkenalkan menu baru "Korean BBQ Steak" dengan 
+                saus barbeque spesial ala My Steak. Menu ini mendapat sambutan hangat dari 
+                pelanggan yang ingin mencoba sensasi baru dalam menikmati steak.
               </p>
             </div>
             <div className="md:w-[45%] w-[70%]">
-              <div className="w-full lg:h-[25rem] md:h-[18rem] h-[13rem] order-2 md:order-none border-[#6B6B6B] border-4">
+              <div className="w-full order-2 md:order-none border-[#6B6B6B] border-4">
                 <Image
-                  src={Event}
+                  src={events3}
                   alt="Event 3"
-                  className="object-cover w-full h-full"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -589,15 +562,13 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
                 <RiDoubleQuotesL />
               </div>
               <p className=" text-sm leading-relaxed relative mb-4 px-4">
-                Nam Donec non, laoreet ut at, turpis fringilla efficitur,
-                adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
-                clidunt risus, urn
+                Steak favorit karena dagingnya betul betul premium. Sensasi makannya terasa mahalnya. Worth the price pokoknya
               </p>
               <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
                 <RiDoubleQuotesR />
               </div>
               <div className="flex items-end justify-end">
-                <p className=" text-sm">- name</p>
+                <p className=" text-sm">- Nur Aisyah Zera</p>
               </div>
             </div>
 
@@ -607,15 +578,13 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
                 <RiDoubleQuotesL />
               </div>
               <p className=" text-sm leading-relaxed relative mb-4 px-4">
-                Nam Donec non, laoreet ut at, turpis fringilla efficitur,
-                adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
-                clidunt risus, urn
+                Steak ter enak dengan harga yg afordable... Porsi ya juga cukup pas ya.. Over all good dining experience terimakasih
               </p>
               <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
                 <RiDoubleQuotesR />
               </div>
               <div className="flex items-end justify-end">
-                <p className=" text-sm">- name</p>
+                <p className=" text-sm">- Akbar Natsir</p>
               </div>
             </div>
 
@@ -625,15 +594,13 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
                 <RiDoubleQuotesL />
               </div>
               <p className=" text-sm leading-relaxed relative mb-4 px-4">
-                Nam Donec non, laoreet ut at, turpis fringilla efficitur,
-                adipiscing eget amet, ex tincidunt risus lacus, urna amet, lacus
-                clidunt risus, urn
+                Resto Steak favorit keluarga. Paling enak memang disini. Tetap dijaga ya kualitas dan rasanya.
               </p>
               <div className="absolute bottom-12 right-4 text-2xl text-[#4D3815] opacity-80">
                 <RiDoubleQuotesR />
               </div>
               <div className="flex items-end justify-end">
-                <p className=" text-sm">- name</p>
+                <p className=" text-sm">- Ichwan Alamsyah</p>
               </div>
             </div>
           </div>

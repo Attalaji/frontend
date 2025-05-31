@@ -44,7 +44,7 @@ function page () {
         className="relative bg-black bg-opacity-50 p-8 rounded-xl shadow-lg w-[400px] text-white backdrop-blur-md"
       >
         <h2 className="text-2xl font-semibold text-center mb-6 border-b border-gray-500 pb-2">
-          My Steak - Login
+          My Steak - Admin Login
         </h2>
 
         {/* Error Message */}
@@ -106,14 +106,6 @@ function page () {
             LOGIN
           </motion.button>
         </form>
-
-        {/* Register */}
-        <p className="text-center text-sm mt-4">
-          Belum punya akun?{" "}
-          <Link href="/Daftar" className="text-[#836A41] hover:text-[#C59E5F]">
-            Daftar
-          </Link>
-        </p>
       </motion.div>
     </div>
   );
