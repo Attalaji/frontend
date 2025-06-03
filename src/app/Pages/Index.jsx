@@ -11,11 +11,22 @@ import Events from "../Asset/Assethome/Events.jpg";
 import Bg_Tentangkami from "../Asset/Assethome/Tentangkami.jpg";
 import Background from "../Asset/Assethome/Background.jpg";
 import Res from "../Asset/Assethome/fotores.jpg";
-import Makanan from "../Asset/Assethome/Makanan.png";
 import glr1 from "../Asset/Assethome/Gallery1.png";
 import events1 from "../Asset/Assethome/events1.jpg";
 import events2 from "../Asset/Assethome/events2.jpg";
 import events3 from "../Asset/Assethome/events3.jpg";
+
+import chickenspecial from "../Asset/Assethome/chickenspecial.png";
+import chickensteak from "../Asset/Assethome/chickensteak.png";
+import chopsteak from "../Asset/Assethome/chopsteak.png";
+import combisteak from "../Asset/Assethome/combisteak.png";
+import grillsalmoin from "../Asset/Assethome/grillsalmon.png";
+import primelambchop from "../Asset/Assethome/primelambchop.png";
+import primeribeye from "../Asset/Assethome/primeribeye.png";
+import primetenderloin from "../Asset/Assethome/primetenderloin.png";
+import supremeribeye from "../Asset/Assethome/supremeribeye.png";
+import supremesirloin from "../Asset/Assethome/supremesirloin.png";
+import wagyuribeye from "../Asset/Assethome/wagyuribeye.png";
 
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
@@ -170,7 +181,6 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
       </div>
 
       {/* Menu Section */}
-
       <div id="menu" className="relative bg-black">
         <div className="container w-[90%] mx-auto py-24">
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-12">MENU</h2>
@@ -181,7 +191,7 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
+                    src={primetenderloin}
                     alt="Prime Tenderloin Steak (Regular)"
                     width={64}
                     height={64}
@@ -204,7 +214,7 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
+                    src={primetenderloin}
                     alt="Prime Tenderloin Steak (Large)"
                     width={64}
                     height={64}
@@ -227,7 +237,7 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
+                    src={supremesirloin}
                     alt="Supreme Sirloin Steak"
                     width={64}
                     height={64}
@@ -250,7 +260,7 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
+                    src={chickensteak}
                     alt="Chicken Steak"
                     width={64}
                     height={64}
@@ -273,8 +283,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Beef Steak with Mushroom Sauce"
+                    src={chopsteak}
+                    alt="Chop Steak"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -296,8 +306,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Pork Steak"
+                    src={chickenspecial}
+                    alt="Chicken Special"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -322,7 +332,7 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
+                    src={grillsalmoin}
                     alt="Grilled Salmon Steak"
                     width={64}
                     height={64}
@@ -345,8 +355,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Lamb Steak"
+                    src={combisteak}
+                    alt="Combi Steak"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -368,8 +378,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Blackpepper Steak"
+                    src={primelambchop}
+                    alt="Prime Lamb Chop"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -391,8 +401,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Tenderloin Steak with Cheese"
+                    src={supremeribeye}
+                    alt="Supreme Ribeye"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -414,8 +424,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Cheeseburger Steak"
+                    src={wagyuribeye}
+                    alt="Wagyu Ribeye"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -437,8 +447,8 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={Makanan}
-                    alt="Grilled Chicken Steak"
+                    src={primeribeye}
+                    alt="Prime Rib Eye"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
