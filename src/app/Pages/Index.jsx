@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import Link from "next/link";
 import GallerySlider from "../components/GallerySlider";
 import ReservationForm from "../components/ReservationForm";
-import ContactForm from "../components/ContactForm";
 import VideoModal from "../components/VideoModal";
 
 import Event from "../Asset/Assethome/Event.png";
@@ -665,24 +664,17 @@ Kami hanya menggunakan daging segar dan bahan-bahan premium untuk setiap hidanga
           <h2 className="text-4xl font-bold text-[#C59E5F] mb-8">KONTAK</h2>
 
           {/* Contact Container */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Map Container */}
-              <div className="w-full aspect-square rounded overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5402435342166!2d119.45437137762401!3d-5.177384081392387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3c2943a2f81%3A0x7f63e3f58c0b4f31!2sMy%20Steak!5e0!3m2!1sen!2sid!4v1740032527330!5m2!1sen!2sid"
-                  width="100%"
-                  height="90%"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-
-              {/* Contact Form */}
-              <div className="space-y-4">
-                <ContactForm />
-              </div>
+          <div className="max-w-7xl mx-auto">
+            {/* Map Container */}
+            <div className="w-full aspect-square rounded overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5402435342166!2d119.45437137762401!3d-5.177384081392387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3c2943a2f81%3A0x7f63e3f58c0b4f31!2sMy%20Steak!5e0!3m2!1sen!2sid!4v1740032527330!5m2!1sen!2sid"
+                width="100%"
+                height="100%"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

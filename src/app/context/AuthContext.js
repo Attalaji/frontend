@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
 
             localStorage.removeItem('auth-token');
             setUser(null);
-            router.push('/login');
+            router.push('/Login');
         } catch (error) {
             console.error("Logout failed:", error);
         }

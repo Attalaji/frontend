@@ -37,7 +37,7 @@ const Navbar = () => {
           {/* Login Button (Selalu Tampil) */}
           <button
             onClick={() => router.push('/Login')}
-            className="bg-transparent text-white border-2 border-[#F2AA36] px-6 py-1.5 rounded-full hover:bg-[#F2AA36] hover:text-black transition"
+            className="hidden bg-transparent text-white border-2 border-[#F2AA36] px-6 py-1.5 rounded-full hover:bg-[#F2AA36] hover:text-black transition"
           >
             Login
           </button>

@@ -81,22 +81,6 @@ function page () {
             </label>
           </div>
 
-          {/* Remember Me & Forgot Password */}
-          <div className="flex items-center justify-between text-sm mb-4">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                // checked={rememberMe}
-                // onChange={() => setRememberMe(!rememberMe)}
-                className="w-4 h-4"
-              />
-              Remember Me
-            </label>
-            <a href="#" className="text-white-400 hover:text-[#C59E5F]">
-              Lupa Sandi
-            </a>
-          </div>
-
           {/* Login Button */}
           <motion.button
             whileTap={{ scale: 0.9 }}

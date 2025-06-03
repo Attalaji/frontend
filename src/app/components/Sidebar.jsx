@@ -5,9 +5,14 @@ import Logo from "../Asset/Assetnavbar/LogoMySteak.svg";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
 
 function Sidebar({ drawerOpen, setDrawerOpen }) {
   const router = useRouter();
+  const { user, loading, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+  }
 
   return (
     <div>
@@ -72,7 +77,7 @@ function Sidebar({ drawerOpen, setDrawerOpen }) {
             {/* Logout Section */}
             <li>
               <a
-                href="/Login"
+                onClick={handleLogout}
                 className="flex items-center p-2 rounded-lg text-white hover:bg-[#C59E5F] group"
               >
                 <FiLogOut
